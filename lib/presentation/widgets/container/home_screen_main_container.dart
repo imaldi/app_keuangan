@@ -33,7 +33,11 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
           Opacity(
             opacity: isUpperContainerExpanded ? 0.5 : 1,
             child: Container(
-                padding: const EdgeInsets.only(right: sizeHuge,top: sizeMedium,bottom: sizeMedium,left: sizeMedium),
+                padding: const EdgeInsets.only(
+                    right: sizeHuge,
+                    top: sizeMedium,
+                    bottom: sizeMedium,
+                    left: sizeMedium),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,80 +113,116 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                 margin: EdgeInsets.only(
                     left: isUpperContainerExpanded
                         ? orientedWidthScreen(context,
-                            portraitRatio: 0.1, landscapeRatio: 0.05)
+                            portraitRatio: 0.05, landscapeRatio: 0.05)
                         : orientedWidthScreen(context,
                             portraitRatio: 0.8, landscapeRatio: 0.9)),
                 child: IntrinsicWidth(
-                  child: Container(
-                    // color: Colors.orange,
-                    // margin: const EdgeInsets.only(left: sizeMedium),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isUpperContainerExpanded =
-                                  !isUpperContainerExpanded;
-                            });
-                          },
-                          onHorizontalDragEnd: (dragEndDetails){
-                            setState(() {
-                              isUpperContainerExpanded =
-                              !isUpperContainerExpanded;
-                            });
-                          },
-                          child: Container(
-                              padding: EdgeInsets.all(sizeNormal),
-                              margin: EdgeInsets.all(0),
-                              decoration: BoxDecoration(
-                                color: accentColor,
-                                border: Border.all(color: Colors.transparent),
-                                borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(sizeNormal),
-                                    bottomLeft: Radius.circular(sizeNormal)),
-                              ),
-                              child: SvgPicture.asset(isUpperContainerExpanded ? btnCloseSlidePath : btnOpenSlidePath)
-                          ),
-                        ),
-                        Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isUpperContainerExpanded =
+                                !isUpperContainerExpanded;
+                          });
+                        },
+                        onHorizontalDragEnd: (dragEndDetails) {
+                          setState(() {
+                            isUpperContainerExpanded =
+                                !isUpperContainerExpanded;
+                          });
+                        },
+                        child: Container(
+                            padding: EdgeInsets.all(sizeNormal),
+                            margin: EdgeInsets.all(0),
+                            decoration: BoxDecoration(
+                              color: accentColor,
+                              border: Border.all(color: Colors.transparent),
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(sizeNormal),
+                                  bottomLeft: Radius.circular(sizeNormal)),
+                            ),
+                            child: SvgPicture.asset(isUpperContainerExpanded
+                                ? btnCloseSlidePath
+                                : btnOpenSlidePath)),
+                      ),
+                      Flexible(
+                        child: Container(
                           color: accentColor,
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: sizeMedium,
-                                          horizontal: sizeNormal),
-                                      child: LabelledSvgIcon(
-                                          btnInputMasukPath, "MASUK"),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: sizeMedium,
-                                          horizontal: sizeNormal),
-                                      child: LabelledSvgIcon(
-                                          btnInputMasukPath, "MASUK"),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: sizeMedium,
-                                          horizontal: sizeNormal),
-                                      child: LabelledSvgIcon(
-                                          btnInputMasukPath, "MASUK"),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: sizeMedium,
-                                          horizontal: sizeNormal),
-                                      child: LabelledSvgIcon(
-                                          btnInputMasukPath, "MASUK"),
-                                    ),
-                                  ],
+                                IntrinsicWidth(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Flexible(
+                                        child: LabelledSvgIcon(
+                                          btnInputMasukPath,
+                                          "MASUK",
+                                          size: sizeHuge,
+                                          svgSize: sizeHuge,
+                                          // constraints: const BoxConstraints(
+                                          //     maxWidth: sizeHuge),
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: sizeNormal),
+                                          margin: const EdgeInsets.symmetric(
+                                              horizontal: sizeNormal),
+                                        ),
+                                      ),
+                                      Flexible(
+                                        child: LabelledSvgIcon(
+                                          btnInputKeluarPath,
+                                          "KELUAR",
+                                          size: sizeHuge,
+                                          svgSize: sizeHuge,
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: sizeNormal
+                                          ),
+                                          margin: const EdgeInsets.symmetric(
+                                              horizontal: sizeNormal),
+                                        ),
+                                      ),
+                                      Flexible(
+                                        child: LabelledSvgIcon(
+                                          btnInputPindahPath,
+                                          "PINDAH",
+                                          size: sizeHuge,
+                                          svgSize: sizeHuge,
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: sizeNormal),
+                                          margin: const EdgeInsets.symmetric(
+                                              horizontal: sizeNormal),
+                                        ),
+                                      ),
+                                      Flexible(
+                                        child: LabelledSvgIcon(
+                                          btnInputMutasiPath,
+                                          "MUTASI",
+                                          size: sizeHuge,
+                                          svgSize: sizeHuge,
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: sizeNormal),
+                                          margin: const EdgeInsets.symmetric(
+                                              horizontal: sizeNormal),
+                                        ),
+                                      ),
+                                      Flexible(
+                                        child: LabelledSvgIcon(
+                                          btnInputKursPath,
+                                          "KURS",
+                                          size: sizeHuge,
+                                          svgSize: sizeHuge,
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: sizeNormal),
+                                          margin: const EdgeInsets.symmetric(
+                                              horizontal: sizeNormal),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                                 Expanded(
                                   child: Container(
@@ -192,8 +232,8 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                 ),
                               ]),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
