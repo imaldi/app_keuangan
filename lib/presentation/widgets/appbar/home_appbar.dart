@@ -18,42 +18,56 @@ class HomeAppbar extends StatefulWidget {
 class _HomeAppbarState extends State<HomeAppbar> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      width: double.infinity,
-      child: Column(
-        children: [
-          Stack(
-            alignment: Alignment.centerRight,
-            children: [
-              Container(
-                  width: double.infinity,
-                  child: const Center(child: CustomText("APP KEUANGAN",color: primaryColor,))),
-              SvgPicture.asset(bellIconPath),
-            ],
-          ),
-          Row(
-            // TODO: make some of these transparent
-            children: const [
-              LabelledSvgIcon(homeIconPath, "HOME"),
-              LabelledSvgIcon(stockIconPath, "TRANSAKSI"),
-              LabelledSvgIcon(newsIconPath, "LAPORAN"),
-              LabelledSvgIcon(settingsIconPath, "TOOLS"),
-            ],
-          ),
-          Container(
-            color: Colors.transparent,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RoundedContainer(
-                  sizeNormal,
-                  boxDecoration: const BoxDecoration(color: Colors.white),
-                  child: SvgPicture.asset(reloadIconPath),
+    return IntrinsicHeight(
+      child: Container(
+        width: double.infinity,
+        child: Column(
+          children: [
+            IntrinsicHeight(child: Container(
+              color: Colors.white,
+              padding: const EdgeInsets.all(sizeNormal),
+              child: Column(children: [
+              Padding(
+                padding: const EdgeInsets.all(sizeNormal),
+                child: Stack(
+                  alignment: Alignment.centerRight,
+                  children: [
+                    Container(
+                        width: double.infinity,
+                        child: const Center(child: CustomText("APP KEUANGAN",color: primaryColor,weight: FontWeight.bold,))),
+                    SvgPicture.asset(bellIconPath),
+                  ],
                 ),
-              ],),
-          )
-        ],
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                // TODO: make some of these transparent
+                children: const [
+                  LabelledSvgIcon(homeIconPath, "HOME",optionalTextTopMargin: sizeNormal,),
+                  LabelledSvgIcon(stockIconPath, "TRANSAKSI"),
+                  LabelledSvgIcon(newsIconPath, "LAPORAN"),
+                  LabelledSvgIcon(settingsIconPath, "TOOLS"),
+                ],
+              ),
+            ],),)),
+            Container(
+              color: Colors.transparent,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(sizeNormal),
+                    decoration: BoxDecoration(color: Colors.white,
+                      border: Border.all(color: Colors.transparent),
+                      borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(sizeNormal), bottomRight: Radius.circular(sizeNormal)),
+                    ),
+                    child: SvgPicture.asset(reloadIconPath),
+                  ),
+                ],),
+            )
+          ],
+        ),
       ),
     );
   }

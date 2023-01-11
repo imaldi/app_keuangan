@@ -1,4 +1,4 @@
-const baseSVGPath = "assets/images/svg";
+const baseSVGPath = "assets/svg";
 const homeIconPath = "$baseSVGPath/home_icon.svg";
 const stockIconPath = "$baseSVGPath/stock_exchange_icon.svg";
 const newsIconPath = "$baseSVGPath/news_icon.svg";

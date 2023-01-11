@@ -15,6 +15,7 @@ class RoundedContainer extends StatefulWidget {
     this.constraints,
     this.clipBehavior,
         this.initState,
+        this.borderColor,
   }) : super(key: key);
   final double borderRadius;
   final double? height;
@@ -25,6 +26,7 @@ class RoundedContainer extends StatefulWidget {
   final BoxConstraints? constraints;
   final Clip? clipBehavior;
   final Function()? initState;
+  final Color? borderColor;
 
   /// Supaya masih bisa meng-custom box decoration walaupun sudah di beri nilai default
   final BoxDecoration boxDecoration;
@@ -51,6 +53,7 @@ class _RoundedContainerState extends State<RoundedContainer> {
       margin: widget.margin ?? const EdgeInsets.symmetric(vertical: sizeNormal),
       constraints: widget.constraints ?? const BoxConstraints(minHeight: sizeBig),
       decoration: widget.boxDecoration.copyWith(
+        border: Border.all(color: widget.borderColor ?? Colors.transparent),
         borderRadius: BorderRadius.all(Radius.circular(widget.borderRadius)),
       ),
       child: widget.child,

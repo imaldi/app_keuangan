@@ -7,13 +7,16 @@ import '../text/custom_text.dart';
 class LabelledSvgIcon extends StatelessWidget {
   final String assetPath;
   final String label;
-  const LabelledSvgIcon(this.assetPath,this.label,{Key? key}) : super(key: key);
+  final double? optionalTextTopMargin;
+  const LabelledSvgIcon(this.assetPath,this.label,{this.optionalTextTopMargin, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
       SvgPicture.asset(assetPath),
-      CustomText(label,color: primaryColor,),
+      Container(
+          margin: EdgeInsets.only(top: optionalTextTopMargin ?? 0.0),
+          child: CustomText(label,color: primaryColor,)),
     ],);
   }
 }
