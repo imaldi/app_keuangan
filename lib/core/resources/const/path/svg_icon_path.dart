@@ -5,3 +5,6 @@ const newsIconPath = "$baseSVGPath/news_icon.svg";
 const settingsIconPath = "$baseSVGPath/settings_icon.svg";
 const bellIconPath = "$baseSVGPath/notification_bell_icon.svg";
 const reloadIconPath = "$baseSVGPath/reload_icon.svg";
+const btnInputMasukPath = "$baseSVGPath/button_input_masuk.svg";
+const btnOpenSlidePath = "$baseSVGPath/button_open_slide.svg";
+const btnCloseSlidePath = "$baseSVGPath/button_close_slide.svg";
