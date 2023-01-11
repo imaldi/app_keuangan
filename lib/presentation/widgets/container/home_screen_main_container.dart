@@ -50,7 +50,7 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomText(
+                        const CustomText(
                           "IDR",
                           weight: FontWeight.bold,
                         ),
@@ -64,7 +64,7 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomText(
+                        const CustomText(
                           "USD",
                           weight: FontWeight.bold,
                         ),
@@ -78,7 +78,7 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomText(
+                        const CustomText(
                           "EUR",
                           weight: FontWeight.bold,
                         ),
@@ -92,7 +92,7 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomText(
+                        const CustomText(
                           "SGD",
                           weight: FontWeight.bold,
                         ),
@@ -134,8 +134,8 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                           });
                         },
                         child: Container(
-                            padding: EdgeInsets.all(sizeNormal),
-                            margin: EdgeInsets.all(0),
+                            padding: const EdgeInsets.all(sizeNormal),
+                            margin: const EdgeInsets.all(0),
                             decoration: BoxDecoration(
                               color: accentColor,
                               border: Border.all(color: Colors.transparent),
@@ -157,7 +157,7 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
-                                    children: [
+                                    children: const [
                                       Flexible(
                                         child: LabelledSvgIcon(
                                           btnInputMasukPath,
@@ -166,9 +166,9 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                           svgSize: sizeHuge,
                                           // constraints: const BoxConstraints(
                                           //     maxWidth: sizeHuge),
-                                          padding: const EdgeInsets.symmetric(
+                                          padding: EdgeInsets.symmetric(
                                               vertical: sizeNormal),
-                                          margin: const EdgeInsets.symmetric(
+                                          margin: EdgeInsets.symmetric(
                                               horizontal: sizeNormal),
                                         ),
                                       ),
@@ -178,10 +178,10 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                           "KELUAR",
                                           size: sizeHuge,
                                           svgSize: sizeHuge,
-                                          padding: const EdgeInsets.symmetric(
+                                          padding: EdgeInsets.symmetric(
                                               vertical: sizeNormal
                                           ),
-                                          margin: const EdgeInsets.symmetric(
+                                          margin: EdgeInsets.symmetric(
                                               horizontal: sizeNormal),
                                         ),
                                       ),
@@ -191,9 +191,9 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                           "PINDAH",
                                           size: sizeHuge,
                                           svgSize: sizeHuge,
-                                          padding: const EdgeInsets.symmetric(
+                                          padding: EdgeInsets.symmetric(
                                               vertical: sizeNormal),
-                                          margin: const EdgeInsets.symmetric(
+                                          margin: EdgeInsets.symmetric(
                                               horizontal: sizeNormal),
                                         ),
                                       ),
@@ -203,9 +203,9 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                           "MUTASI",
                                           size: sizeHuge,
                                           svgSize: sizeHuge,
-                                          padding: const EdgeInsets.symmetric(
+                                          padding: EdgeInsets.symmetric(
                                               vertical: sizeNormal),
-                                          margin: const EdgeInsets.symmetric(
+                                          margin: EdgeInsets.symmetric(
                                               horizontal: sizeNormal),
                                         ),
                                       ),
@@ -215,9 +215,9 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                           "KURS",
                                           size: sizeHuge,
                                           svgSize: sizeHuge,
-                                          padding: const EdgeInsets.symmetric(
+                                          padding: EdgeInsets.symmetric(
                                               vertical: sizeNormal),
-                                          margin: const EdgeInsets.symmetric(
+                                          margin: EdgeInsets.symmetric(
                                               horizontal: sizeNormal),
                                         ),
                                       ),
@@ -225,9 +225,108 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                   ),
                                 ),
                                 Expanded(
-                                  child: Container(
-                                    color: Colors.green,
-                                    child: Text("Hey"),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Expanded(
+                                        child: RoundedContainer(
+                                          sizeNormal,
+                                          margin: const EdgeInsets.symmetric(horizontal: sizeMedium,vertical: sizeNormal),
+                                          boxDecoration: BoxDecoration(color: Colors.white,),
+                                          child: Row(
+                                            children: [
+                                              Expanded( 
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                  children: [
+                                                    Flexible(
+                                                      child: Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                        children: [
+                                                          CustomText(
+                                                            "Nama Outlet",
+                                                            color: primaryTextColor,
+                                                            weight: FontWeight.bold,
+                                                          ),CustomText(
+                                                            "16",
+                                                            weight: FontWeight.bold,
+                                                          ),
+                                                        ]..map((e) => FittedBox(child: e,)),
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      child: Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                        children: [
+                                                          const CustomText(
+                                                            "IDR",
+                                                            weight: FontWeight.bold,
+                                                          ),
+                                                          CustomText(
+                                                            "500.000",
+                                                            color: primaryTextColor,
+                                                            weight: FontWeight.bold,
+                                                          )
+                                                        ]..map((e) => FittedBox(child: e,)),
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      child: Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                        children: [
+                                                          const CustomText(
+                                                            "USD",
+                                                            weight: FontWeight.bold,
+                                                          ),
+                                                          CustomText(
+                                                            "0",
+                                                            color: primaryTextColor,
+                                                            weight: FontWeight.bold,
+                                                          )
+                                                        ]..map((e) => FittedBox(child: e,)),
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      child: Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                        children: [
+                                                          const CustomText(
+                                                            "EUR",
+                                                            weight: FontWeight.bold,
+                                                          ),
+                                                          CustomText(
+                                                            "20.000",
+                                                            color: primaryTextColor,
+                                                            weight: FontWeight.bold,
+                                                          )
+                                                        ]..map((e) => FittedBox(child: e,)),
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      child: Row(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                        children: [
+                                                          const CustomText(
+                                                            "SGD",
+                                                            weight: FontWeight.bold,
+                                                          ),
+                                                          CustomText(
+                                                            "6.000",
+                                                            color: primaryTextColor,
+                                                            weight: FontWeight.bold,
+                                                          )
+                                                        ]..map((e) => FittedBox(child: e,)),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ]),
