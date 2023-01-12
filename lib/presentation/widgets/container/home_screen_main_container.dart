@@ -2,10 +2,12 @@ import 'package:app_keuangan/core/media_query/media_query_helpers.dart';
 import 'package:app_keuangan/core/resources/const/colors/colors.dart';
 import 'package:app_keuangan/core/resources/const/numbers/sizes.dart';
 import 'package:app_keuangan/core/resources/const/path/svg_icon_path.dart';
+import 'package:app_keuangan/core/routes/app_router.gr.dart';
 import 'package:app_keuangan/presentation/widgets/container/rounded_container.dart';
 import 'package:app_keuangan/presentation/widgets/icon/labelled_svg_icon.dart';
 import 'package:app_keuangan/presentation/widgets/text/custom_text.dart';
 import 'package:app_keuangan/presentation/widgets/text/ellipsis_text.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -175,44 +177,59 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
-                                    children: const [
+                                    children: [
                                       Flexible(
-                                        child: LabelledSvgIcon(
-                                          btnInputMasukPath,
-                                          "MASUK",
-                                          size: sizeHuge,
-                                          svgSize: sizeHuge,
-                                          // constraints: const BoxConstraints(
-                                          //     maxWidth: sizeHuge),
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: sizeNormal),
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: sizeNormal),
-                                        ),
-                                      ),
-                                      Flexible(
-                                        child: LabelledSvgIcon(
-                                          btnInputKeluarPath,
-                                          "KELUAR",
-                                          size: sizeHuge,
-                                          svgSize: sizeHuge,
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: sizeNormal
+                                        child: InkWell(
+                                          onTap: (){
+                                            context.router.push(const MasukRoute());
+                                          },
+                                          child: LabelledSvgIcon(
+                                            btnInputMasukPath,
+                                            "MASUK",
+                                            size: sizeHuge,
+                                            svgSize: sizeHuge,
+                                            // constraints: const BoxConstraints(
+                                            //     maxWidth: sizeHuge),
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: sizeNormal),
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: sizeNormal),
                                           ),
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: sizeNormal),
                                         ),
                                       ),
                                       Flexible(
-                                        child: LabelledSvgIcon(
-                                          btnInputPindahPath,
-                                          "PINDAH",
-                                          size: sizeHuge,
-                                          svgSize: sizeHuge,
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: sizeNormal),
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: sizeNormal),
+                                        child: InkWell(
+                                          onTap: (){
+                                            context.router.push(const KeluarRoute());
+                                          },
+                                          child: LabelledSvgIcon(
+                                            btnInputKeluarPath,
+                                            "KELUAR",
+                                            size: sizeHuge,
+                                            svgSize: sizeHuge,
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: sizeNormal
+                                            ),
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: sizeNormal),
+                                          ),
+                                        ),
+                                      ),
+                                      Flexible(
+                                        child: InkWell(
+                                          onTap: (){
+                                            context.router.push(const PindahRoute());
+                                          },
+                                          child: LabelledSvgIcon(
+                                            btnInputPindahPath,
+                                            "PINDAH",
+                                            size: sizeHuge,
+                                            svgSize: sizeHuge,
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: sizeNormal),
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: sizeNormal),
+                                          ),
                                         ),
                                       ),
                                       Flexible(
@@ -228,15 +245,20 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                         ),
                                       ),
                                       Flexible(
-                                        child: LabelledSvgIcon(
-                                          btnInputKursPath,
-                                          "KURS",
-                                          size: sizeHuge,
-                                          svgSize: sizeHuge,
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: sizeNormal),
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: sizeNormal),
+                                        child: InkWell(
+                                          onTap: (){
+                                            context.router.push(const PindahKursRoute());
+                                          },
+                                          child: LabelledSvgIcon(
+                                            btnInputKursPath,
+                                            "KURS",
+                                            size: sizeHuge,
+                                            svgSize: sizeHuge,
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: sizeNormal),
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: sizeNormal),
+                                          ),
                                         ),
                                       ),
                                     ],

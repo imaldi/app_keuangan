@@ -28,7 +28,10 @@ class RootWidget extends StatelessWidget {
           primaryColor: primaryColor,
           scaffoldBackgroundColor: primaryColor,
           appBarTheme: AppBarTheme.of(context).copyWith(
-            backgroundColor: primaryColor,
+            centerTitle: true,
+            backgroundColor: Colors.white,
+            titleTextStyle: TextStyle(color: primaryColor,fontWeight: FontWeight.bold,),
+            iconTheme: IconThemeData(color: primaryColor),
           ),
           textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme),
           inputDecorationTheme: const InputDecorationTheme(
