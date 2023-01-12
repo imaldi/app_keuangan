@@ -45,9 +45,15 @@ class _HomeAppbarState extends State<HomeAppbar> {
                 // TODO: make some of these transparent
                 children: const [
                   LabelledSvgIcon(homeIconPath, "HOME",optionalTextTopMargin: sizeNormal,),
-                  LabelledSvgIcon(stockIconPath, "TRANSAKSI"),
-                  LabelledSvgIcon(newsIconPath, "LAPORAN"),
-                  LabelledSvgIcon(settingsIconPath, "TOOLS"),
+                  Opacity(
+                      opacity: 0.4,
+                      child: LabelledSvgIcon(stockIconPath, "TRANSAKSI")),
+                  Opacity(
+                      opacity: 0.4,
+                      child: LabelledSvgIcon(newsIconPath, "LAPORAN")),
+                  Opacity(
+                      opacity: 0.4,
+                      child: LabelledSvgIcon(settingsIconPath, "TOOLS")),
                 ],
               ),
             ],),)),

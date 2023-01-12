@@ -12,3 +12,7 @@ const btnInputMutasiPath = "$baseSVGPath/button_input_mutasi.svg";
 const btnInputKursPath = "$baseSVGPath/button_input_kurs.svg";
 const btnOpenSlidePath = "$baseSVGPath/button_open_slide.svg";
 const btnCloseSlidePath = "$baseSVGPath/button_close_slide.svg";
+const iconRupiahPath = "$baseSVGPath/icon_rupiah.svg";
+const iconDollarPath = "$baseSVGPath/icon_dollar.svg";
+const iconEuroPath = "$baseSVGPath/icon_euro.svg";
+const iconSingaporeDollarPath = "$baseSVGPath/icon_dollar_singapore.svg";

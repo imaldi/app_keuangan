@@ -9,6 +9,8 @@ class CustomText extends StatelessWidget {
       this.weight,
       this.decoration,
       this.shadows,
+      this.overflow,
+        this.softWrap,
       this.letterSpacing})
       : super(key: key);
   final String data;
@@ -19,22 +21,26 @@ class CustomText extends StatelessWidget {
   final TextAlign? textAlign;
   final TextDecoration? decoration;
   final List<Shadow>? shadows;
+  final TextOverflow? overflow;
+  final bool? softWrap;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       data,
       textAlign: textAlign,
+      overflow: overflow,
       style: TextStyle(
-          color: color,
-          fontSize: size,
-          fontWeight: weight,
-          decoration: decoration,
-          decorationThickness: 2,
-          decorationColor: shadows?.first.color,
-          letterSpacing: letterSpacing,
-          shadows: shadows),
-      softWrap: true,
+        color: color,
+        fontSize: size,
+        fontWeight: weight,
+        decoration: decoration,
+        decorationThickness: 2,
+        decorationColor: shadows?.first.color,
+        letterSpacing: letterSpacing,
+        shadows: shadows,
+      ),
+      softWrap: softWrap ?? true,
     );
   }
 }

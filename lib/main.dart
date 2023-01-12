@@ -2,9 +2,11 @@ import 'package:app_keuangan/core/resources/const/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'core/routes/app_router.gr.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  initializeDateFormatting('id');
 
   runApp(RootWidget());
 }

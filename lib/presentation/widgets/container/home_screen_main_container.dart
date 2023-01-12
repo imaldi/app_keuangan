@@ -5,8 +5,11 @@ import 'package:app_keuangan/core/resources/const/path/svg_icon_path.dart';
 import 'package:app_keuangan/presentation/widgets/container/rounded_container.dart';
 import 'package:app_keuangan/presentation/widgets/icon/labelled_svg_icon.dart';
 import 'package:app_keuangan/presentation/widgets/text/custom_text.dart';
+import 'package:app_keuangan/presentation/widgets/text/ellipsis_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../core/resources/helper/currency_formatter.dart';
 
 class HomeScreenMainContainer extends StatefulWidget {
   const HomeScreenMainContainer({Key? key}) : super(key: key);
@@ -50,10 +53,13 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        SvgPicture.asset(iconRupiahPath),
+                        SizedBox(width: sizeNormal,),
                         const CustomText(
                           "IDR",
                           weight: FontWeight.bold,
                         ),
+                        const EllipsisText(),
                         CustomText(
                           "500.000",
                           color: primaryTextColor,
@@ -64,10 +70,14 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        SvgPicture.asset(iconDollarPath),
+                        SizedBox(width: sizeNormal,),
                         const CustomText(
                           "USD",
                           weight: FontWeight.bold,
                         ),
+                        const EllipsisText(),
+
                         CustomText(
                           "0",
                           color: primaryTextColor,
@@ -78,10 +88,14 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        SvgPicture.asset(iconEuroPath),
+                        SizedBox(width: sizeNormal,),
                         const CustomText(
                           "EUR",
                           weight: FontWeight.bold,
                         ),
+                        const EllipsisText(),
+
                         CustomText(
                           "20.000",
                           color: primaryTextColor,
@@ -92,10 +106,14 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        SvgPicture.asset(iconSingaporeDollarPath),
+                        SizedBox(width: sizeNormal,),
                         const CustomText(
                           "SGD",
                           weight: FontWeight.bold,
                         ),
+                        const EllipsisText(),
+
                         CustomText(
                           "6.000",
                           color: primaryTextColor,
@@ -245,10 +263,11 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           CustomText(
-                                                            "Nama Outlet",
-                                                            color: primaryTextColor,
+                                                            "Jumlah Barang",
                                                             weight: FontWeight.bold,
-                                                          ),CustomText(
+                                                          ),
+                                                          EllipsisText(),
+                                                          CustomText(
                                                             "16",
                                                             weight: FontWeight.bold,
                                                           ),
@@ -260,11 +279,11 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           const CustomText(
-                                                            "IDR",
-                                                            weight: FontWeight.bold,
+                                                            "Total IDR",
                                                           ),
+                                                          EllipsisText(),
                                                           CustomText(
-                                                            "500.000",
+                                                            "${rupiahSymbol()} 500.000",
                                                             color: primaryTextColor,
                                                             weight: FontWeight.bold,
                                                           )
@@ -276,11 +295,11 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           const CustomText(
-                                                            "USD",
-                                                            weight: FontWeight.bold,
+                                                            "Total USD",
                                                           ),
+                                                          EllipsisText(),
                                                           CustomText(
-                                                            "0",
+                                                            "${usdSymbol()} 0",
                                                             color: primaryTextColor,
                                                             weight: FontWeight.bold,
                                                           )
@@ -292,11 +311,11 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           const CustomText(
-                                                            "EUR",
-                                                            weight: FontWeight.bold,
+                                                            "Total EUR",
                                                           ),
+                                                          EllipsisText(),
                                                           CustomText(
-                                                            "20.000",
+                                                            "${eurSymbol()} 20.000",
                                                             color: primaryTextColor,
                                                             weight: FontWeight.bold,
                                                           )
@@ -308,11 +327,11 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                         children: [
                                                           const CustomText(
-                                                            "SGD",
-                                                            weight: FontWeight.bold,
+                                                            "Total SGD",
                                                           ),
+                                                          EllipsisText(),
                                                           CustomText(
-                                                            "6.000",
+                                                            "${sgdSymbol()} 6.000",
                                                             color: primaryTextColor,
                                                             weight: FontWeight.bold,
                                                           )
