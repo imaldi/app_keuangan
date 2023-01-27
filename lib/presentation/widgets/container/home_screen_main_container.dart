@@ -126,254 +126,284 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                   ],
                 )),
           ),
-          SizedBox.expand(
-            child: IntrinsicWidth(
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 400),
-                margin: EdgeInsets.only(
-                    left: isUpperContainerExpanded
-                        ? orientedWidthScreen(context,
-                            portraitRatio: 0.05, landscapeRatio: 0.05)
-                        : orientedWidthScreen(context,
-                            portraitRatio: 0.8, landscapeRatio: 0.9)),
-                child: IntrinsicWidth(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            isUpperContainerExpanded =
-                                !isUpperContainerExpanded;
-                          });
-                        },
-                        onHorizontalDragEnd: (dragEndDetails) {
-                          setState(() {
-                            isUpperContainerExpanded =
-                                !isUpperContainerExpanded;
-                          });
-                        },
-                        child: Container(
-                            padding: const EdgeInsets.all(sizeNormal),
-                            margin: const EdgeInsets.all(0),
-                            decoration: BoxDecoration(
-                              color: accentColor,
-                              border: Border.all(color: Colors.transparent),
-                              borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(sizeNormal),
-                                  bottomLeft: Radius.circular(sizeNormal)),
-                            ),
-                            child: SvgPicture.asset(isUpperContainerExpanded
-                                ? btnCloseSlidePath
-                                : btnOpenSlidePath)),
-                      ),
-                      Flexible(
-                        child: Container(
-                          color: accentColor,
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                IntrinsicWidth(
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Flexible(
-                                        child: InkWell(
-                                          onTap: (){
-                                            context.router.push(const MasukRoute());
-                                          },
-                                          child: LabelledSvgIcon(
-                                            btnInputMasukPath,
-                                            "MASUK",
-                                            size: sizeHuge,
-                                            svgSize: sizeHuge,
-                                            // constraints: const BoxConstraints(
-                                            //     maxWidth: sizeHuge),
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: sizeNormal),
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: sizeNormal),
-                                          ),
-                                        ),
-                                      ),
-                                      Flexible(
-                                        child: InkWell(
-                                          onTap: (){
-                                            context.router.push(const KeluarRoute());
-                                          },
-                                          child: LabelledSvgIcon(
-                                            btnInputKeluarPath,
-                                            "KELUAR",
-                                            size: sizeHuge,
-                                            svgSize: sizeHuge,
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: sizeNormal
-                                            ),
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: sizeNormal),
-                                          ),
-                                        ),
-                                      ),
-                                      Flexible(
-                                        child: InkWell(
-                                          onTap: (){
-                                            context.router.push(const PindahRoute());
-                                          },
-                                          child: LabelledSvgIcon(
-                                            btnInputPindahPath,
-                                            "PINDAH",
-                                            size: sizeHuge,
-                                            svgSize: sizeHuge,
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: sizeNormal),
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: sizeNormal),
-                                          ),
-                                        ),
-                                      ),
-                                      Flexible(
-                                        child: LabelledSvgIcon(
-                                          btnInputMutasiPath,
-                                          "MUTASI",
-                                          size: sizeHuge,
-                                          svgSize: sizeHuge,
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: sizeNormal),
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: sizeNormal),
-                                        ),
-                                      ),
-                                      Flexible(
-                                        child: InkWell(
-                                          onTap: (){
-                                            context.router.push(const PindahKursRoute());
-                                          },
-                                          child: LabelledSvgIcon(
-                                            btnInputKursPath,
-                                            "KURS",
-                                            size: sizeHuge,
-                                            svgSize: sizeHuge,
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: sizeNormal),
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: sizeNormal),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: RoundedContainer(
-                                          sizeNormal,
-                                          margin: const EdgeInsets.symmetric(horizontal: sizeMedium,vertical: sizeNormal),
-                                          boxDecoration: BoxDecoration(color: Colors.white,),
-                                          child: Row(
-                                            children: [
-                                              Expanded( 
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                  children: [
-                                                    Flexible(
-                                                      child: Row(
-                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                        children: [
-                                                          CustomText(
-                                                            "Jumlah Barang",
-                                                            weight: FontWeight.bold,
-                                                          ),
-                                                          EllipsisText(),
-                                                          CustomText(
-                                                            "16",
-                                                            weight: FontWeight.bold,
-                                                          ),
-                                                        ]..map((e) => FittedBox(child: e,)),
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      child: Row(
-                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                        children: [
-                                                          const CustomText(
-                                                            "Total IDR",
-                                                          ),
-                                                          EllipsisText(),
-                                                          CustomText(
-                                                            "${rupiahSymbol()} 500.000",
-                                                            color: primaryTextColor,
-                                                            weight: FontWeight.bold,
-                                                          )
-                                                        ]..map((e) => FittedBox(child: e,)),
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      child: Row(
-                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                        children: [
-                                                          const CustomText(
-                                                            "Total USD",
-                                                          ),
-                                                          EllipsisText(),
-                                                          CustomText(
-                                                            "${usdSymbol()} 0",
-                                                            color: primaryTextColor,
-                                                            weight: FontWeight.bold,
-                                                          )
-                                                        ]..map((e) => FittedBox(child: e,)),
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      child: Row(
-                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                        children: [
-                                                          const CustomText(
-                                                            "Total EUR",
-                                                          ),
-                                                          EllipsisText(),
-                                                          CustomText(
-                                                            "${eurSymbol()} 20.000",
-                                                            color: primaryTextColor,
-                                                            weight: FontWeight.bold,
-                                                          )
-                                                        ]..map((e) => FittedBox(child: e,)),
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      child: Row(
-                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                        children: [
-                                                          const CustomText(
-                                                            "Total SGD",
-                                                          ),
-                                                          EllipsisText(),
-                                                          CustomText(
-                                                            "${sgdSymbol()} 6.000",
-                                                            color: primaryTextColor,
-                                                            weight: FontWeight.bold,
-                                                          )
-                                                        ]..map((e) => FittedBox(child: e,)),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ]),
+          OverflowBox(
+            child: SizedBox.expand(
+              child: IntrinsicWidth(
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 400),
+                  margin: EdgeInsets.only(
+                      left: isUpperContainerExpanded
+                          ? orientedWidthScreen(context,
+                              portraitRatio: 0.05, landscapeRatio: 0.05)
+                          : orientedWidthScreen(context,
+                              portraitRatio: 0.8, landscapeRatio: 0.9)),
+                  child: IntrinsicWidth(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isUpperContainerExpanded =
+                                  !isUpperContainerExpanded;
+                            });
+                          },
+                          onHorizontalDragEnd: (dragEndDetails) {
+                            setState(() {
+                              isUpperContainerExpanded =
+                                  !isUpperContainerExpanded;
+                            });
+                          },
+                          child: Container(
+                              padding: const EdgeInsets.all(sizeNormal),
+                              margin: const EdgeInsets.all(0),
+                              decoration: BoxDecoration(
+                                color: accentColor,
+                                border: Border.all(color: Colors.transparent),
+                                borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(sizeNormal),
+                                    bottomLeft: Radius.circular(sizeNormal)),
+                              ),
+                              child: SvgPicture.asset(isUpperContainerExpanded
+                                  ? btnCloseSlidePath
+                                  : btnOpenSlidePath)),
                         ),
-                      ),
-                    ],
+                        Flexible(
+                          child: Container(
+                            color: accentColor,
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  IntrinsicWidth(
+                                    child: Visibility(
+                                      visible:isUpperContainerExpanded,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(
+                                            child: InkWell(
+                                              onTap: (){
+                                                context.router.push(const MasukRoute());
+                                              },
+                                              child: LabelledSvgIcon(
+                                                btnInputMasukPath,
+                                                "MASUK",
+                                                size: sizeHuge,
+                                                svgSize: sizeHuge,
+                                                // constraints: const BoxConstraints(
+                                                //     maxWidth: sizeHuge),
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: sizeNormal),
+                                                margin: EdgeInsets.symmetric(
+                                                    horizontal: sizeNormal),
+                                              ),
+                                            ),
+                                          ),
+                                          Flexible(
+                                            child: InkWell(
+                                              onTap: (){
+                                                context.router.push(const KeluarRoute());
+                                              },
+                                              child: LabelledSvgIcon(
+                                                btnInputKeluarPath,
+                                                "KELUAR",
+                                                size: sizeHuge,
+                                                svgSize: sizeHuge,
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: sizeNormal
+                                                ),
+                                                margin: EdgeInsets.symmetric(
+                                                    horizontal: sizeNormal),
+                                              ),
+                                            ),
+                                          ),
+                                          Flexible(
+                                            child: InkWell(
+                                              onTap: (){
+                                                context.router.push(const PindahRoute());
+                                              },
+                                              child: LabelledSvgIcon(
+                                                btnInputPindahPath,
+                                                "PINDAH",
+                                                size: sizeHuge,
+                                                svgSize: sizeHuge,
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: sizeNormal),
+                                                margin: EdgeInsets.symmetric(
+                                                    horizontal: sizeNormal),
+                                              ),
+                                            ),
+                                          ),
+                                          Flexible(
+                                            child: LabelledSvgIcon(
+                                              btnInputMutasiPath,
+                                              "MUTASI",
+                                              size: sizeHuge,
+                                              svgSize: sizeHuge,
+                                              padding: EdgeInsets.symmetric(
+                                                  vertical: sizeNormal),
+                                              margin: EdgeInsets.symmetric(
+                                                  horizontal: sizeNormal),
+                                            ),
+                                          ),
+                                          Flexible(
+                                            child: InkWell(
+                                              onTap: (){
+                                                context.router.push(const PindahKursRoute());
+                                              },
+                                              child: LabelledSvgIcon(
+                                                btnInputKursPath,
+                                                "KURS",
+                                                size: sizeHuge,
+                                                svgSize: sizeHuge,
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: sizeNormal),
+                                                margin: EdgeInsets.symmetric(
+                                                    horizontal: sizeNormal),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Expanded(
+                                          child: RoundedContainer(
+                                            sizeNormal,
+                                            margin: const EdgeInsets.symmetric(horizontal: sizeMedium,vertical: sizeNormal),
+                                            boxDecoration: BoxDecoration(color: Colors.white,),
+                                            child: Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    children: [
+                                                      Expanded(
+                                                        child: Visibility(
+                                                          visible:isUpperContainerExpanded,
+                                                          child: OverflowBox(
+                                                            child: Row(
+                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                              children: [
+                                                                CustomText(
+                                                                  "Jumlah Barang",
+                                                                  weight: FontWeight.bold,
+                                                                ),
+                                                                EllipsisText(),
+                                                                CustomText(
+                                                                  "16",
+                                                                  weight: FontWeight.bold,
+                                                                ),
+                                                              ]..map((e) => Expanded(child: e,)),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        child: Visibility(
+                                                          visible:isUpperContainerExpanded,
+                                                          child: OverflowBox(
+                                                            child: Row(
+                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                              children: [
+                                                                const CustomText(
+                                                                  "Total IDR",
+                                                                ),
+                                                                EllipsisText(),
+                                                                CustomText(
+                                                                  "${rupiahSymbol()} 500.000",
+                                                                  color: primaryTextColor,
+                                                                  weight: FontWeight.bold,
+                                                                )
+                                                              ]..map((e) => FittedBox(child: e,)),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        child: Visibility(
+                                                          visible:isUpperContainerExpanded,
+                                                          child: OverflowBox(
+                                                            child: Row(
+                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                              children: [
+                                                                const CustomText(
+                                                                  "Total USD",
+                                                                ),
+                                                                EllipsisText(),
+                                                                CustomText(
+                                                                  "${usdSymbol()} 0",
+                                                                  color: primaryTextColor,
+                                                                  weight: FontWeight.bold,
+                                                                )
+                                                              ]..map((e) => FittedBox(child: e,)),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        child: Visibility(
+                                                          visible:isUpperContainerExpanded,
+                                                          child: OverflowBox(
+                                                            child: Row(
+                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                              children: [
+                                                                const CustomText(
+                                                                  "Total EUR",
+                                                                ),
+                                                                EllipsisText(),
+                                                                CustomText(
+                                                                  "${eurSymbol()} 20.000",
+                                                                  color: primaryTextColor,
+                                                                  weight: FontWeight.bold,
+                                                                )
+                                                              ]..map((e) => FittedBox(child: e,)),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        child: Visibility(
+                                                          visible:isUpperContainerExpanded,
+                                                          child: OverflowBox(
+                                                            child: Row(
+                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                              children: [
+                                                                const CustomText(
+                                                                  "Total SGD",
+                                                                ),
+                                                                EllipsisText(),
+                                                                CustomText(
+                                                                  "${sgdSymbol()} 6.000",
+                                                                  color: primaryTextColor,
+                                                                  weight: FontWeight.bold,
+                                                                )
+                                                              ]..map((e) => FittedBox(child: e,)),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ]),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

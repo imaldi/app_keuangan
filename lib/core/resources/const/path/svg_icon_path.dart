@@ -16,3 +16,4 @@ const iconRupiahPath = "$baseSVGPath/icon_rupiah.svg";
 const iconDollarPath = "$baseSVGPath/icon_dollar.svg";
 const iconEuroPath = "$baseSVGPath/icon_euro.svg";
 const iconSingaporeDollarPath = "$baseSVGPath/icon_dollar_singapore.svg";
+const iconDropdownPath = "$baseSVGPath/dropdown_arrow_icon.svg";
