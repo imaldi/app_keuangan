@@ -28,7 +28,6 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
   @override
   Widget build(BuildContext context) {
     return RoundedContainer(
-      sizeNormal,
       margin: const EdgeInsets.symmetric(horizontal: sizeNormal),
       boxDecoration: const BoxDecoration(color: Colors.white),
       clipBehavior: Clip.antiAlias,
@@ -274,7 +273,6 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                       children: [
                                         Expanded(
                                           child: RoundedContainer(
-                                            sizeNormal,
                                             margin: const EdgeInsets.symmetric(horizontal: sizeMedium,vertical: sizeNormal),
                                             boxDecoration: BoxDecoration(color: Colors.white,),
                                             child: Row(

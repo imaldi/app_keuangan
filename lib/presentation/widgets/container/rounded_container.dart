@@ -4,8 +4,9 @@ import '../../../core/resources/const/numbers/sizes.dart';
 
 class RoundedContainer extends StatefulWidget {
   const RoundedContainer(
-    this.borderRadius, {
-    required this.child,
+    {
+      this.borderRadius = 10,
+      required this.child,
     this.boxDecoration = const BoxDecoration(color: Colors.white),
     Key? key,
     this.padding,
