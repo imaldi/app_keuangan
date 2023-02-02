@@ -16,10 +16,10 @@ class MasukScreen extends StatefulWidget {
   const MasukScreen({Key? key}) : super(key: key);
 
   @override
-  _MasukScreenState createState() => _MasukScreenState();
+  MasukScreenState createState() => MasukScreenState();
 }
 
-class _MasukScreenState extends State<MasukScreen> {
+class MasukScreenState extends State<MasukScreen> {
   final List<String> items = [
     'Item1',
     'Item2',
@@ -31,13 +31,15 @@ class _MasukScreenState extends State<MasukScreen> {
     'Item8',
   ];
   String? selectedValue;
-  var tanggalController = TextEditingController(text: DateFormat("dd/MM/yyyy").format(DateTime.now()).toString());
+  var tanggalController = TextEditingController(
+      text: DateFormat("dd/MM/yyyy").format(DateTime.now()).toString());
   var inputController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Masuk"),
+        title: const Text("Masuk"),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -58,7 +60,7 @@ class _MasukScreenState extends State<MasukScreen> {
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton2(
                         isDense: true,
-                        hint: Text(
+                        hint: const Text(
                           'Select Item',
                           style: TextStyle(
                             fontSize: 14,
@@ -119,7 +121,9 @@ class _MasukScreenState extends State<MasukScreen> {
                     ),
                   )),
             ),
-            SizedBox(height: sizeMedium,),
+            const SizedBox(
+              height: sizeMedium,
+            ),
             const CustomText(
               "Start Date",
               color: Colors.white,
@@ -128,11 +132,18 @@ class _MasukScreenState extends State<MasukScreen> {
                 margin: const EdgeInsets.all(sizeNormal),
                 child: GestureDetector(
                   onTap: () async {
-                    var newDate = await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(2100));
+                    var newDate = await showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2000),
+                        lastDate: DateTime(2100));
                     setState(() {
-                      tanggalController.text = DateFormat("dd/MM/yyyy").format(newDate ?? DateTime.now()).toString();
+                      tanggalController.text = DateFormat("dd/MM/yyyy")
+                          .format(newDate ?? DateTime.now())
+                          .toString();
                     });
-                  },child: NoUnderlineTextFormField(
+                  },
+                  child: NoUnderlineTextFormField(
                     controller: tanggalController,
                     enabled: false,
                     textAlign: TextAlign.center,
@@ -150,33 +161,82 @@ class _MasukScreenState extends State<MasukScreen> {
                     Expanded(
                       child: NoUnderlineTextFormField(
                         style: const TextStyle(color: primaryColor),
-                        decoration: InputDecoration(
-                            hintStyle: const TextStyle(color: primaryColor),
-                            hintText: "0",
+                        decoration: const InputDecoration(
+                          hintStyle: TextStyle(color: primaryColor),
+                          hintText: "0",
                         ),
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.right,
-                        controller: inputController,),
+                        controller: inputController,
+                      ),
                     ),
-                    MainCurrencyDropdown(),
+                    const MainCurrencyDropdown(),
                   ],
+                )),
+            const CustomText(
+              "Photo",
+              color: Colors.white,
+            ),
+            RoundedContainer(
+                margin: const EdgeInsets.all(sizeNormal),
+                padding: const EdgeInsets.symmetric(horizontal: sizeMedium),
+                child: IntrinsicHeight(
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: RoundedContainer(
+                        constraints: const BoxConstraints(minHeight: 80),
+                        margin: const EdgeInsets.symmetric(
+                            vertical: sizeNormal, horizontal: sizeSmall),
+                        boxDecoration: const BoxDecoration(color: accentColor),
+                        child: Column(
+                          children: const [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              color: primaryColor,
+                            ),
+                            CustomText(
+                              "Tambahkan Foto",
+                              textAlign: TextAlign.center,
+                              color: primaryColor,
+                            ),
+                          ],
+                        ),
+                      )),
+                      Expanded(
+                          child: RoundedContainer(
+                        margin: const EdgeInsets.symmetric(
+                            vertical: sizeNormal, horizontal: sizeSmall),
+                        boxDecoration:
+                            BoxDecoration(color: accentColor.withAlpha(99)),
+                        child: Container(),
+                      )),
+                      Expanded(
+                          child: RoundedContainer(
+                        margin: const EdgeInsets.symmetric(
+                            vertical: sizeNormal, horizontal: sizeSmall),
+                        boxDecoration:
+                            BoxDecoration(color: accentColor.withAlpha(99)),
+                        child: Container(),
+                      )),
+                      Expanded(
+                          child: RoundedContainer(
+                        margin: const EdgeInsets.symmetric(
+                            vertical: sizeNormal, horizontal: sizeSmall),
+                        boxDecoration:
+                            BoxDecoration(color: accentColor.withAlpha(99)),
+                        child: Container(),
+                      )),
+                    ],
+                  ),
                 )),
             const CustomText(
               "Keterangan",
               color: Colors.white,
             ),
             const RoundedContainer(
-                margin: const EdgeInsets.all(sizeNormal),
+                margin: EdgeInsets.all(sizeNormal),
                 child: NoUnderlineTextFormField()),
-            const CustomText(
-              "Keterangan",
-              color: Colors.white,
-            ),
-            const RoundedContainer(
-                margin: const EdgeInsets.all(sizeNormal),
-                child: NoUnderlineTextFormField()),
-
-            const MainCurrencyDropdown(),
           ],
         ),
       ),
