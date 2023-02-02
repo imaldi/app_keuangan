@@ -2,6 +2,7 @@ import 'package:app_keuangan/core/media_query/media_query_helpers.dart';
 import 'package:app_keuangan/core/resources/const/numbers/sizes.dart';
 import 'package:app_keuangan/core/resources/const/path/svg_icon_path.dart';
 import 'package:app_keuangan/presentation/widgets/container/rounded_container.dart';
+import 'package:app_keuangan/presentation/widgets/main_currency_dropdown/main_currency_dropdown.dart';
 import 'package:app_keuangan/presentation/widgets/text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -31,6 +32,7 @@ class _MasukScreenState extends State<MasukScreen> {
   ];
   String? selectedValue;
   var tanggalController = TextEditingController(text: DateFormat("dd/MM/yyyy").format(DateTime.now()).toString());
+  var inputController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,12 +140,27 @@ class _MasukScreenState extends State<MasukScreen> {
                   ),
                 )),
             const CustomText(
-              "Keterangan",
+              "Input",
               color: Colors.white,
             ),
-            const RoundedContainer(
+            RoundedContainer(
                 margin: const EdgeInsets.all(sizeNormal),
-                child: NoUnderlineTextFormField()),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: NoUnderlineTextFormField(
+                        style: const TextStyle(color: primaryColor),
+                        decoration: InputDecoration(
+                            hintStyle: const TextStyle(color: primaryColor),
+                            hintText: "0",
+                        ),
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.right,
+                        controller: inputController,),
+                    ),
+                    MainCurrencyDropdown(),
+                  ],
+                )),
             const CustomText(
               "Keterangan",
               color: Colors.white,
@@ -158,6 +175,8 @@ class _MasukScreenState extends State<MasukScreen> {
             const RoundedContainer(
                 margin: const EdgeInsets.all(sizeNormal),
                 child: NoUnderlineTextFormField()),
+
+            const MainCurrencyDropdown(),
           ],
         ),
       ),
