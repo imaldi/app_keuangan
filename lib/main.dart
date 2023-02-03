@@ -35,7 +35,7 @@ class RootWidget extends StatelessWidget {
               // color: primaryColor,
               fontWeight: FontWeight.bold,
             ),
-            iconTheme: IconThemeData(color: primaryColor),
+            iconTheme: const IconThemeData(color: Colors.black),
           ),
           textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme),
           inputDecorationTheme: const InputDecorationTheme(

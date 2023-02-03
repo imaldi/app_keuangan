@@ -69,7 +69,7 @@ class _KeluarScreenState extends State<KeluarScreen> {
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
-                            color: primaryColor,
+                            color: Colors.black,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -95,7 +95,7 @@ class _KeluarScreenState extends State<KeluarScreen> {
                         },
                         icon: SvgPicture.asset(iconDropdownPath),
                         iconSize: sizeMedium,
-                        iconEnabledColor: primaryColor,
+                        iconEnabledColor: Colors.black,
                         iconDisabledColor: Colors.grey,
                         buttonPadding: const EdgeInsets.only(
                             left: sizeMedium, right: sizeMedium),
@@ -151,7 +151,7 @@ class _KeluarScreenState extends State<KeluarScreen> {
                     controller: tanggalController,
                     enabled: false,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(color: primaryColor),
+                    style: const TextStyle(color: Colors.black),
                   ),
                 )),
             const CustomText(
@@ -171,9 +171,9 @@ class _KeluarScreenState extends State<KeluarScreen> {
                   children: [
                     Expanded(
                       child: NoUnderlineTextFormField(
-                        style: const TextStyle(color: primaryColor),
+                        style: const TextStyle(color: Colors.black),
                         decoration: const InputDecoration(
-                          hintStyle: TextStyle(color: primaryColor),
+                          hintStyle: TextStyle(color: Colors.black),
                           hintText: "0",
                         ),
                         keyboardType: TextInputType.number,
@@ -204,12 +204,12 @@ class _KeluarScreenState extends State<KeluarScreen> {
                           children: const [
                             Icon(
                               Icons.camera_alt_outlined,
-                              color: primaryColor,
+                              color: Colors.black,
                             ),
                             CustomText(
                               "Tambahkan Foto",
                               textAlign: TextAlign.center,
-                              color: primaryColor,
+                              color: Colors.black,
                             ),
                           ],
                         ),

@@ -70,7 +70,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: primaryColor,
+                                color: Colors.black,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -82,7 +82,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                                         style: const TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.white,
+                                          color: Colors.black,
                                         ),
                                         overflow: TextOverflow.ellipsis,
                                       ),
@@ -96,7 +96,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                             },
                             icon: SvgPicture.asset(iconDropdownPath),
                             iconSize: sizeMedium,
-                            iconEnabledColor: primaryColor,
+                            iconEnabledColor: Colors.black,
                             iconDisabledColor: Colors.grey,
                             buttonPadding: const EdgeInsets.only(
                                 left: sizeMedium, right: sizeMedium),
@@ -174,7 +174,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                                                                       FontWeight
                                                                           .bold,
                                                                   color:
-                                                                      primaryColor,
+                                                                      Colors.black,
                                                                 ),
                                                                 overflow:
                                                                     TextOverflow
@@ -196,7 +196,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             color:
-                                                                                Colors.white,
+                                                                                Colors.black,
                                                                           ),
                                                                           overflow:
                                                                               TextOverflow.ellipsis,
@@ -220,7 +220,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                                                               iconSize:
                                                                   sizeMedium,
                                                               iconEnabledColor:
-                                                                  primaryColor,
+                                                                  Colors.black,
                                                               iconDisabledColor:
                                                                   Colors.grey,
                                                               buttonPadding:
@@ -296,7 +296,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                                                                     const CustomText(
                                                                       "Start Date",
                                                                       color:
-                                                                          primaryColor,
+                                                                          Colors.black,
                                                                     ),
                                                                     MyDatePicker(
                                                                       backgroundColor:
@@ -322,7 +322,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                                                                     const CustomText(
                                                                       "Start Date",
                                                                       color:
-                                                                          primaryColor,
+                                                                          Colors.black,
                                                                     ),
                                                                     MyDatePicker(
                                                                       backgroundColor:
@@ -361,7 +361,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                                                             child: CustomText(
                                                               "Submit",
                                                               color:
-                                                                  Colors.white,
+                                                                  Colors.black,
                                                             ))
                                                       ],
                                                     ),
@@ -385,13 +385,13 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                                     children: [
                                       CustomText(
                                         "Jenis Laporan ",
-                                        color: primaryColor,
+                                        color: Colors.black,
                                         weight: FontWeight.bold,
                                       ),
                                       // SizedBox(width: sizeMedium,),
                                       CustomText(
                                           "${tanggalDariController.text} - ${tanggalKeController.text}",
-                                          color: primaryColor),
+                                          color: Colors.black),
                                     ],
                                   ),
                                 ),
@@ -408,7 +408,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
             ),
             const CustomText(
               "Dari",
-              color: Colors.white,
+              color: Colors.black,
             ),
             RoundedContainer(
                 margin: const EdgeInsets.all(sizeNormal),
@@ -416,9 +416,9 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                   children: [
                     Expanded(
                       child: NoUnderlineTextFormField(
-                        style: const TextStyle(color: primaryColor),
+                        style: const TextStyle(color: Colors.black),
                         decoration: const InputDecoration(
-                          hintStyle: TextStyle(color: primaryColor),
+                          hintStyle: TextStyle(color: Colors.black),
                           hintText: "0",
                         ),
                         keyboardType: TextInputType.number,
@@ -431,7 +431,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                 )),
             const CustomText(
               "Ke",
-              color: Colors.white,
+              color: Colors.black,
             ),
             RoundedContainer(
                 margin: const EdgeInsets.all(sizeNormal),
@@ -439,9 +439,9 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                   children: [
                     Expanded(
                       child: NoUnderlineTextFormField(
-                        style: const TextStyle(color: primaryColor),
+                        style: const TextStyle(color: Colors.black),
                         decoration: const InputDecoration(
-                          hintStyle: TextStyle(color: primaryColor),
+                          hintStyle: TextStyle(color: Colors.black),
                           hintText: "0",
                         ),
                         keyboardType: TextInputType.number,
@@ -462,7 +462,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                     backgroundColor: accentColor),
                 child: const CustomText(
                   "Submit",
-                  color: primaryColor,
+                  color: Colors.black,
                 ),
                 onPressed: () {},
               ),

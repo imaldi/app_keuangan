@@ -47,7 +47,7 @@ class _MainCurrencyDropdownState extends State<MainCurrencyDropdown> {
     return Container(
       margin: const EdgeInsets.only(left: sizeNormal),
       decoration: DottedDecoration(
-        color: primaryColor,
+        color: Colors.black,
         strokeWidth: 1,
         linePosition: LinePosition.left,
       ),
@@ -67,7 +67,7 @@ class _MainCurrencyDropdownState extends State<MainCurrencyDropdown> {
                           ),
                           CustomText(
                             "${item["text"]}",
-                            color: primaryColor,
+                            color: Colors.black,
                           ),
                         ],
                       ),

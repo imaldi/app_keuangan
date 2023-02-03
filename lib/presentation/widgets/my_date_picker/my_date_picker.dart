@@ -45,7 +45,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
             controller: widget.controller,
             enabled: false,
             textAlign: TextAlign.center,
-            style: TextStyle(color: widget.textColor ?? primaryColor),
+            style: TextStyle(color: widget.textColor),
           ),
         ));
   }

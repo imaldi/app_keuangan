@@ -36,6 +36,7 @@ class MasukScreenState extends State<MasukScreen> {
       text: DateFormat("dd/MM/yyyy").format(DateTime.now()).toString());
   var inputController = TextEditingController();
   var keteranganController = TextEditingController();
+  var primaryColor = Colors.black;
 
   // TODO fix masalah scroll widget
   // TODO fix masalah button style
@@ -65,7 +66,7 @@ class MasukScreenState extends State<MasukScreen> {
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton2(
                         isDense: true,
-                        hint: const Text(
+                        hint: Text(
                           'Select Item',
                           style: TextStyle(
                             fontSize: 14,
@@ -153,8 +154,8 @@ class MasukScreenState extends State<MasukScreen> {
                   children: [
                     Expanded(
                       child: NoUnderlineTextFormField(
-                        style: const TextStyle(color: primaryColor),
-                        decoration: const InputDecoration(
+                        style: TextStyle(color: primaryColor),
+                        decoration: InputDecoration(
                           hintStyle: TextStyle(color: primaryColor),
                           hintText: "0",
                         ),
@@ -183,7 +184,7 @@ class MasukScreenState extends State<MasukScreen> {
                             vertical: sizeNormal, horizontal: sizeSmall),
                         boxDecoration: const BoxDecoration(color: accentColor),
                         child: Column(
-                          children: const [
+                          children: [
                             Icon(
                               Icons.camera_alt_outlined,
                               color: primaryColor,
