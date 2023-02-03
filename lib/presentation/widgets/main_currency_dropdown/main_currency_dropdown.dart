@@ -65,6 +65,8 @@ class _MainCurrencyDropdownState extends State<MainCurrencyDropdown> {
             value: item["value"] as Currency,
             child: DropdownMenuItem(value: item["value"] as Currency,child: Row(children: [
               SvgPicture.asset(item["icon"].toString()),
+              SizedBox(width: sizeNormal,
+              ),
               CustomText("${item["text"]}",color: primaryColor,),
             ],),
             ),

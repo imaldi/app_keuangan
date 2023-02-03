@@ -3,6 +3,7 @@ import 'package:app_keuangan/core/resources/const/numbers/sizes.dart';
 import 'package:app_keuangan/core/resources/const/path/svg_icon_path.dart';
 import 'package:app_keuangan/presentation/widgets/container/rounded_container.dart';
 import 'package:app_keuangan/presentation/widgets/main_currency_dropdown/main_currency_dropdown.dart';
+import 'package:app_keuangan/presentation/widgets/my_date_picker/my_date_picker.dart';
 import 'package:app_keuangan/presentation/widgets/text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -36,6 +37,8 @@ class MasukScreenState extends State<MasukScreen> {
   var inputController = TextEditingController();
   var keteranganController = TextEditingController();
 
+  // TODO fix masalah scroll widget
+  // TODO fix masalah button style
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,28 +133,15 @@ class MasukScreenState extends State<MasukScreen> {
               "Start Date",
               color: Colors.white,
             ),
-            RoundedContainer(
-                margin: const EdgeInsets.all(sizeNormal),
-                child: GestureDetector(
-                  onTap: () async {
-                    var newDate = await showDatePicker(
-                        context: context,
-                        initialDate: DateTime.now(),
-                        firstDate: DateTime(2000),
-                        lastDate: DateTime(2100));
-                    setState(() {
-                      tanggalController.text = DateFormat("dd/MM/yyyy")
-                          .format(newDate ?? DateTime.now())
-                          .toString();
-                    });
-                  },
-                  child: NoUnderlineTextFormField(
-                    controller: tanggalController,
-                    enabled: false,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: primaryColor),
-                  ),
-                )),
+            MyDatePicker(
+              controller: tanggalController,
+              onTapDateResult: (newDate){
+              setState(() {
+                tanggalController.text = DateFormat("dd/MM/yyyy")
+                    .format(newDate ?? DateTime.now())
+                    .toString();
+              });
+            },),
             const CustomText(
               "Input",
               color: Colors.white,
