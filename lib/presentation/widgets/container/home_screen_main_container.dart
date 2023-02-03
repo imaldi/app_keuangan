@@ -55,7 +55,9 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SvgPicture.asset(iconRupiahPath),
-                        SizedBox(width: sizeNormal,),
+                        SizedBox(
+                          width: sizeNormal,
+                        ),
                         const CustomText(
                           "IDR",
                           weight: FontWeight.bold,
@@ -72,13 +74,14 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SvgPicture.asset(iconDollarPath),
-                        SizedBox(width: sizeNormal,),
+                        SizedBox(
+                          width: sizeNormal,
+                        ),
                         const CustomText(
                           "USD",
                           weight: FontWeight.bold,
                         ),
                         const EllipsisText(),
-
                         CustomText(
                           "0",
                           color: primaryTextColor,
@@ -90,13 +93,14 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SvgPicture.asset(iconEuroPath),
-                        SizedBox(width: sizeNormal,),
+                        SizedBox(
+                          width: sizeNormal,
+                        ),
                         const CustomText(
                           "EUR",
                           weight: FontWeight.bold,
                         ),
                         const EllipsisText(),
-
                         CustomText(
                           "20.000",
                           color: primaryTextColor,
@@ -108,13 +112,14 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SvgPicture.asset(iconSingaporeDollarPath),
-                        SizedBox(width: sizeNormal,),
+                        SizedBox(
+                          width: sizeNormal,
+                        ),
                         const CustomText(
                           "SGD",
                           weight: FontWeight.bold,
                         ),
                         const EllipsisText(),
-
                         CustomText(
                           "6.000",
                           color: primaryTextColor,
@@ -175,15 +180,16 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                 children: [
                                   IntrinsicWidth(
                                     child: Visibility(
-                                      visible:isUpperContainerExpanded,
+                                      visible: isUpperContainerExpanded,
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Flexible(
                                             child: InkWell(
-                                              onTap: (){
-                                                context.router.push(const MasukRoute());
+                                              onTap: () {
+                                                context.router
+                                                    .push(const MasukRoute());
                                               },
                                               child: LabelledSvgIcon(
                                                 btnInputMasukPath,
@@ -201,8 +207,9 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                           ),
                                           Flexible(
                                             child: InkWell(
-                                              onTap: (){
-                                                context.router.push(const KeluarRoute());
+                                              onTap: () {
+                                                context.router
+                                                    .push(const KeluarRoute());
                                               },
                                               child: LabelledSvgIcon(
                                                 btnInputKeluarPath,
@@ -210,8 +217,7 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                 size: sizeHuge,
                                                 svgSize: sizeHuge,
                                                 padding: EdgeInsets.symmetric(
-                                                    vertical: sizeNormal
-                                                ),
+                                                    vertical: sizeNormal),
                                                 margin: EdgeInsets.symmetric(
                                                     horizontal: sizeNormal),
                                               ),
@@ -219,8 +225,9 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                           ),
                                           Flexible(
                                             child: InkWell(
-                                              onTap: (){
-                                                context.router.push(const PindahRoute());
+                                              onTap: () {
+                                                context.router
+                                                    .push(const PindahRoute());
                                               },
                                               child: LabelledSvgIcon(
                                                 btnInputPindahPath,
@@ -248,8 +255,9 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                           ),
                                           Flexible(
                                             child: InkWell(
-                                              onTap: (){
-                                                context.router.push(const PindahKursRoute());
+                                              onTap: () {
+                                                context.router.push(
+                                                    const PindahKursRoute());
                                               },
                                               child: LabelledSvgIcon(
                                                 btnInputKursPath,
@@ -269,46 +277,68 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                   ),
                                   Expanded(
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Expanded(
                                           child: RoundedContainer(
-                                            margin: const EdgeInsets.symmetric(horizontal: sizeMedium,vertical: sizeNormal),
-                                            boxDecoration: BoxDecoration(color: Colors.white,),
+                                            margin: const EdgeInsets.symmetric(
+                                                horizontal: sizeMedium,
+                                                vertical: sizeNormal),
+                                            boxDecoration: BoxDecoration(
+                                              color: Colors.white,
+                                            ),
                                             child: Row(
                                               children: [
                                                 Expanded(
                                                   child: Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
                                                     children: [
                                                       Expanded(
                                                         child: Visibility(
-                                                          visible:isUpperContainerExpanded,
+                                                          visible:
+                                                              isUpperContainerExpanded,
                                                           child: OverflowBox(
                                                             child: Row(
-                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
                                                               children: [
                                                                 CustomText(
                                                                   "Jumlah Barang",
-                                                                  weight: FontWeight.bold,
+                                                                  weight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                 ),
                                                                 EllipsisText(),
                                                                 CustomText(
                                                                   "16",
-                                                                  weight: FontWeight.bold,
+                                                                  weight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                 ),
-                                                              ]..map((e) => Expanded(child: e,)),
+                                                              ]..map((e) =>
+                                                                  Expanded(
+                                                                    child: e,
+                                                                  )),
                                                             ),
                                                           ),
                                                         ),
                                                       ),
                                                       Expanded(
                                                         child: Visibility(
-                                                          visible:isUpperContainerExpanded,
+                                                          visible:
+                                                              isUpperContainerExpanded,
                                                           child: OverflowBox(
                                                             child: Row(
-                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
                                                               children: [
                                                                 const CustomText(
                                                                   "Total IDR",
@@ -316,20 +346,29 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                                 EllipsisText(),
                                                                 CustomText(
                                                                   "${rupiahSymbol()} 500.000",
-                                                                  color: primaryTextColor,
-                                                                  weight: FontWeight.bold,
+                                                                  color:
+                                                                      primaryTextColor,
+                                                                  weight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                 )
-                                                              ]..map((e) => FittedBox(child: e,)),
+                                                              ]..map((e) =>
+                                                                  FittedBox(
+                                                                    child: e,
+                                                                  )),
                                                             ),
                                                           ),
                                                         ),
                                                       ),
                                                       Expanded(
                                                         child: Visibility(
-                                                          visible:isUpperContainerExpanded,
+                                                          visible:
+                                                              isUpperContainerExpanded,
                                                           child: OverflowBox(
                                                             child: Row(
-                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
                                                               children: [
                                                                 const CustomText(
                                                                   "Total USD",
@@ -337,20 +376,29 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                                 EllipsisText(),
                                                                 CustomText(
                                                                   "${usdSymbol()} 0",
-                                                                  color: primaryTextColor,
-                                                                  weight: FontWeight.bold,
+                                                                  color:
+                                                                      primaryTextColor,
+                                                                  weight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                 )
-                                                              ]..map((e) => FittedBox(child: e,)),
+                                                              ]..map((e) =>
+                                                                  FittedBox(
+                                                                    child: e,
+                                                                  )),
                                                             ),
                                                           ),
                                                         ),
                                                       ),
                                                       Expanded(
                                                         child: Visibility(
-                                                          visible:isUpperContainerExpanded,
+                                                          visible:
+                                                              isUpperContainerExpanded,
                                                           child: OverflowBox(
                                                             child: Row(
-                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
                                                               children: [
                                                                 const CustomText(
                                                                   "Total EUR",
@@ -358,20 +406,29 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                                 EllipsisText(),
                                                                 CustomText(
                                                                   "${eurSymbol()} 20.000",
-                                                                  color: primaryTextColor,
-                                                                  weight: FontWeight.bold,
+                                                                  color:
+                                                                      primaryTextColor,
+                                                                  weight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                 )
-                                                              ]..map((e) => FittedBox(child: e,)),
+                                                              ]..map((e) =>
+                                                                  FittedBox(
+                                                                    child: e,
+                                                                  )),
                                                             ),
                                                           ),
                                                         ),
                                                       ),
                                                       Expanded(
                                                         child: Visibility(
-                                                          visible:isUpperContainerExpanded,
+                                                          visible:
+                                                              isUpperContainerExpanded,
                                                           child: OverflowBox(
                                                             child: Row(
-                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
                                                               children: [
                                                                 const CustomText(
                                                                   "Total SGD",
@@ -379,10 +436,16 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                                 EllipsisText(),
                                                                 CustomText(
                                                                   "${sgdSymbol()} 6.000",
-                                                                  color: primaryTextColor,
-                                                                  weight: FontWeight.bold,
+                                                                  color:
+                                                                      primaryTextColor,
+                                                                  weight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                 )
-                                                              ]..map((e) => FittedBox(child: e,)),
+                                                              ]..map((e) =>
+                                                                  FittedBox(
+                                                                    child: e,
+                                                                  )),
                                                             ),
                                                           ),
                                                         ),

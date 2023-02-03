@@ -10,7 +10,7 @@ class CustomText extends StatelessWidget {
       this.decoration,
       this.shadows,
       this.overflow,
-        this.softWrap,
+      this.softWrap,
       this.letterSpacing})
       : super(key: key);
   final String data;

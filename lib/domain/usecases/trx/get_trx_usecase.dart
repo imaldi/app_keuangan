@@ -13,5 +13,4 @@ class GetTrxUseCase extends UseCase<TrxResponse, TrxGetParams> {
   Future<Either<Failure, TrxResponse>> call(TrxGetParams params) async {
     return await repository.getTrx(params);
   }
-
 }

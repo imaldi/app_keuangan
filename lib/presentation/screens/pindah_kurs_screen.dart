@@ -58,7 +58,7 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                   elevation: 2,
                   child: Container(
                     padding: const EdgeInsets.symmetric(
-                        vertical: sizeMedium,
+                      vertical: sizeMedium,
                     ),
                     color: Colors.white,
                     child: Column(
@@ -76,17 +76,17 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                             ),
                             items: items
                                 .map((item) => DropdownMenuItem<String>(
-                              value: item,
-                              child: Text(
-                                item,
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ))
+                                      value: item,
+                                      child: Text(
+                                        item,
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ))
                                 .toList(),
                             value: selectedValue,
                             onChanged: (value) {
@@ -109,7 +109,8 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                             ),
                             buttonElevation: 2,
                             itemHeight: 40,
-                            itemPadding: const EdgeInsets.only(left: 14, right: 14),
+                            itemPadding:
+                                const EdgeInsets.only(left: 14, right: 14),
                             dropdownMaxHeight: 200,
                             dropdownWidth: 100,
                             dropdownPadding: null,
@@ -124,166 +125,276 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                             offset: const Offset(0, 0),
                           ),
                         ),
-                        const SizedBox(height: sizeNormal,),
+                        const SizedBox(
+                          height: sizeNormal,
+                        ),
                         Row(
                           children: [
                             Expanded(
                               child: InkWell(
-                                onTap: (){
-                                  showDialog(context: context, builder: (c){
-                                    return AlertDialog(
-                                      shape: const RoundedRectangleBorder(
-                                          borderRadius:
-                                          BorderRadius.all(
-                                              Radius.circular(10.0))),
-                                      content: Builder(
-                                        builder: (context) {
-                                          return Container(
-                                            width: 3*widthScreen(context)/4,
-                                              margin: const EdgeInsets.symmetric(horizontal: sizeNormal),
-                                              padding: const EdgeInsets.symmetric(vertical: sizeNormal),
-                                              child: IntrinsicHeight(
-                                                child: Column(
-                                                  children: [
-                                                    CustomText("Filter"),
-                                                    SizedBox(height: sizeNormal,),
-                                                    StatefulBuilder(
-                                                      builder:(c,setStateInner) => DropdownButtonHideUnderline(
-                                                        child: DropdownButton2(
-                                                          hint: const Text(
-                                                            'Select Item',
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight: FontWeight.bold,
-                                                              color: primaryColor,
-                                                            ),
-                                                            overflow: TextOverflow.ellipsis,
-                                                          ),
-                                                          items: items
-                                                              .map((item) => DropdownMenuItem<String>(
-                                                            value: item,
-                                                            child: Text(
-                                                              item,
-                                                              style: const TextStyle(
-                                                                fontSize: 14,
-                                                                fontWeight: FontWeight.bold,
-                                                                color: Colors.white,
+                                onTap: () {
+                                  showDialog(
+                                      context: context,
+                                      builder: (c) {
+                                        return AlertDialog(
+                                          shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10.0))),
+                                          content: Builder(
+                                            builder: (context) {
+                                              return Container(
+                                                  width: 3 *
+                                                      widthScreen(context) /
+                                                      4,
+                                                  margin: const EdgeInsets
+                                                          .symmetric(
+                                                      horizontal: sizeNormal),
+                                                  padding: const EdgeInsets
+                                                          .symmetric(
+                                                      vertical: sizeNormal),
+                                                  child: IntrinsicHeight(
+                                                    child: Column(
+                                                      children: [
+                                                        CustomText("Filter"),
+                                                        SizedBox(
+                                                          height: sizeNormal,
+                                                        ),
+                                                        StatefulBuilder(
+                                                          builder: (c,
+                                                                  setStateInner) =>
+                                                              DropdownButtonHideUnderline(
+                                                            child:
+                                                                DropdownButton2(
+                                                              hint: const Text(
+                                                                'Select Item',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 14,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  color:
+                                                                      primaryColor,
+                                                                ),
+                                                                overflow:
+                                                                    TextOverflow
+                                                                        .ellipsis,
                                                               ),
-                                                              overflow: TextOverflow.ellipsis,
+                                                              items: items
+                                                                  .map((item) =>
+                                                                      DropdownMenuItem<
+                                                                          String>(
+                                                                        value:
+                                                                            item,
+                                                                        child:
+                                                                            Text(
+                                                                          item,
+                                                                          style:
+                                                                              const TextStyle(
+                                                                            fontSize:
+                                                                                14,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            color:
+                                                                                Colors.white,
+                                                                          ),
+                                                                          overflow:
+                                                                              TextOverflow.ellipsis,
+                                                                        ),
+                                                                      ))
+                                                                  .toList(),
+                                                              value:
+                                                                  selectedValue,
+                                                              onChanged:
+                                                                  (value) {
+                                                                setStateInner(
+                                                                    () {
+                                                                  selectedValue =
+                                                                      value
+                                                                          as String;
+                                                                });
+                                                              },
+                                                              icon: SvgPicture
+                                                                  .asset(
+                                                                      iconDropdownPath),
+                                                              iconSize:
+                                                                  sizeMedium,
+                                                              iconEnabledColor:
+                                                                  primaryColor,
+                                                              iconDisabledColor:
+                                                                  Colors.grey,
+                                                              buttonPadding:
+                                                                  const EdgeInsets
+                                                                          .only(
+                                                                      left:
+                                                                          sizeMedium,
+                                                                      right:
+                                                                          sizeMedium),
+                                                              buttonDecoration:
+                                                                  BoxDecoration(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            14),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: Colors
+                                                                      .black26,
+                                                                ),
+                                                                color:
+                                                                    accentColor,
+                                                              ),
+                                                              buttonElevation:
+                                                                  2,
+                                                              itemHeight: 40,
+                                                              itemPadding:
+                                                                  const EdgeInsets
+                                                                          .only(
+                                                                      left: 14,
+                                                                      right:
+                                                                          14),
+                                                              dropdownMaxHeight:
+                                                                  200,
+                                                              dropdownWidth:
+                                                                  100,
+                                                              dropdownPadding:
+                                                                  null,
+                                                              dropdownDecoration:
+                                                                  BoxDecoration(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            14),
+                                                                color:
+                                                                    accentColor,
+                                                              ),
+                                                              dropdownElevation:
+                                                                  8,
+                                                              scrollbarRadius:
+                                                                  const Radius
+                                                                      .circular(40),
+                                                              scrollbarThickness:
+                                                                  6,
+                                                              scrollbarAlwaysShow:
+                                                                  true,
+                                                              offset:
+                                                                  const Offset(
+                                                                      0, 0),
                                                             ),
-                                                          ))
-                                                              .toList(),
-                                                          value: selectedValue,
-                                                          onChanged: (value) {
-                                                            setStateInner(() {
-                                                              selectedValue = value as String;
-                                                            });
-                                                          },
-                                                          icon: SvgPicture.asset(iconDropdownPath),
-                                                          iconSize: sizeMedium,
-                                                          iconEnabledColor: primaryColor,
-                                                          iconDisabledColor: Colors.grey,
-                                                          buttonPadding: const EdgeInsets.only(
-                                                              left: sizeMedium, right: sizeMedium),
-                                                          buttonDecoration: BoxDecoration(
-                                                            borderRadius: BorderRadius.circular(14),
-                                                            border: Border.all(
-                                                              color: Colors.black26,
-                                                            ),
-                                                            color: accentColor,
                                                           ),
-                                                          buttonElevation: 2,
-                                                          itemHeight: 40,
-                                                          itemPadding: const EdgeInsets.only(
-                                                              left: 14, right: 14),
-                                                          dropdownMaxHeight: 200,
-                                                          dropdownWidth: 100,
-                                                          dropdownPadding: null,
-                                                          dropdownDecoration: BoxDecoration(
-                                                            borderRadius: BorderRadius.circular(14),
-                                                            color: accentColor,
-                                                          ),
-                                                          dropdownElevation: 8,
-                                                          scrollbarRadius: const Radius.circular(40),
-                                                          scrollbarThickness: 6,
-                                                          scrollbarAlwaysShow: true,
-                                                          offset: const Offset(0, 0),
                                                         ),
-                                                      ),
-                                                    ),
-
-                                                    Container(
-                                                      margin: const EdgeInsets.symmetric(vertical: sizeMedium),
-                                                      child: Row(
-                                                        children: [
-                                                          Flexible(
-                                                            child: Column(
-                                                              children: [
-                                                                const CustomText("Start Date",color: primaryColor,),
-                                                                MyDatePicker(
-                                                                  backgroundColor: accentColor,
-                                                                  controller: tanggalDariController,
-                                                                  onTapDateResult: (newDate){
-                                                                    setState(() {
-                                                                      tanggalDariController.text = DateFormat("dd/MM/yyyy")
-                                                                          .format(newDate ?? DateTime.now())
-                                                                          .toString();
-                                                                    });
-                                                                  },),
-                                                              ],
-                                                            ),
+                                                        Container(
+                                                          margin: const EdgeInsets
+                                                                  .symmetric(
+                                                              vertical:
+                                                                  sizeMedium),
+                                                          child: Row(
+                                                            children: [
+                                                              Flexible(
+                                                                child: Column(
+                                                                  children: [
+                                                                    const CustomText(
+                                                                      "Start Date",
+                                                                      color:
+                                                                          primaryColor,
+                                                                    ),
+                                                                    MyDatePicker(
+                                                                      backgroundColor:
+                                                                          accentColor,
+                                                                      controller:
+                                                                          tanggalDariController,
+                                                                      onTapDateResult:
+                                                                          (newDate) {
+                                                                        setState(
+                                                                            () {
+                                                                          tanggalDariController.text = DateFormat("dd/MM/yyyy")
+                                                                              .format(newDate ?? DateTime.now())
+                                                                              .toString();
+                                                                        });
+                                                                      },
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              Flexible(
+                                                                child: Column(
+                                                                  children: [
+                                                                    const CustomText(
+                                                                      "Start Date",
+                                                                      color:
+                                                                          primaryColor,
+                                                                    ),
+                                                                    MyDatePicker(
+                                                                      backgroundColor:
+                                                                          accentColor,
+                                                                      controller:
+                                                                          tanggalKeController,
+                                                                      onTapDateResult:
+                                                                          (newDate) {
+                                                                        setState(
+                                                                            () {
+                                                                          tanggalKeController.text = DateFormat("dd/MM/yyyy")
+                                                                              .format(newDate ?? DateTime.now())
+                                                                              .toString();
+                                                                        });
+                                                                      },
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
                                                           ),
-                                                          Flexible(
-                                                            child: Column(
-                                                              children: [
-                                                                const CustomText("Start Date",color: primaryColor,),
-                                                                MyDatePicker(
-                                                                  backgroundColor: accentColor,
-                                                                  controller: tanggalKeController,
-                                                                  onTapDateResult: (newDate){
-                                                                    setState(() {
-                                                                      tanggalKeController.text = DateFormat("dd/MM/yyyy")
-                                                                          .format(newDate ?? DateTime.now())
-                                                                          .toString();
-                                                                    });
-                                                                  },),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                    ElevatedButton(
-                                                        style: ElevatedButton.styleFrom(
-                                                          foregroundColor: Colors.red,
-                                                          shadowColor: Colors.red,
                                                         ),
-                                                        onPressed: (){
-                                                      context.router.pop();
-                                                    }, child: CustomText("Submit",color: Colors.white,))
-                                                  ],
-                                                ),
-                                              )
-                                          );
-                                        },
-                                      ),
-                                      insetPadding: const EdgeInsets.all(0),
-
-                                    );
-                                  });
+                                                        ElevatedButton(
+                                                            style:
+                                                                ElevatedButton
+                                                                    .styleFrom(
+                                                              foregroundColor:
+                                                                  Colors.red,
+                                                              shadowColor:
+                                                                  Colors.red,
+                                                            ),
+                                                            onPressed: () {
+                                                              context.router
+                                                                  .pop();
+                                                            },
+                                                            child: CustomText(
+                                                              "Submit",
+                                                              color:
+                                                                  Colors.white,
+                                                            ))
+                                                      ],
+                                                    ),
+                                                  ));
+                                            },
+                                          ),
+                                          insetPadding: const EdgeInsets.all(0),
+                                        );
+                                      });
                                 },
                                 child: RoundedContainer(
                                   borderRadius: sizeMedium,
-                                  padding: const EdgeInsets.symmetric(horizontal: sizeMedium),
-                                  margin: EdgeInsets.symmetric(horizontal: sizeBig),
-                                  boxDecoration: BoxDecoration(color: accentColor),child: Row(
-                                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                      CustomText("Jenis Laporan ",color: primaryColor,weight: FontWeight.bold,),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: sizeMedium),
+                                  margin:
+                                      EdgeInsets.symmetric(horizontal: sizeBig),
+                                  boxDecoration:
+                                      BoxDecoration(color: accentColor),
+                                  child: Row(
+                                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      CustomText(
+                                        "Jenis Laporan ",
+                                        color: primaryColor,
+                                        weight: FontWeight.bold,
+                                      ),
                                       // SizedBox(width: sizeMedium,),
-                                      CustomText("${tanggalDariController.text} - ${tanggalKeController.text}",color: primaryColor),
+                                      CustomText(
+                                          "${tanggalDariController.text} - ${tanggalKeController.text}",
+                                          color: primaryColor),
                                     ],
-                                  ),),
+                                  ),
+                                ),
                               ),
                             ),
                           ],
@@ -292,7 +403,6 @@ class PindahKursScreenState extends State<PindahKursScreen> {
                     ),
                   )),
             ),
-
             const SizedBox(
               height: sizeMedium,
             ),
@@ -346,14 +456,18 @@ class PindahKursScreenState extends State<PindahKursScreen> {
               padding: const EdgeInsets.only(top: sizeHuge, bottom: sizeMedium),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: sizeMedium, horizontal: sizeBig),
-                  shape: basicButtonRoundShape,
+                    padding: const EdgeInsets.symmetric(
+                        vertical: sizeMedium, horizontal: sizeBig),
+                    shape: basicButtonRoundShape,
                     backgroundColor: accentColor),
-                child: const CustomText("Submit",color: primaryColor,),
+                child: const CustomText(
+                  "Submit",
+                  color: primaryColor,
+                ),
                 onPressed: () {},
               ),
             ),
-            Stack(fit:StackFit.passthrough)
+            Stack(fit: StackFit.passthrough)
           ],
         ),
       ),

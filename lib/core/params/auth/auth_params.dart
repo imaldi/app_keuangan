@@ -8,7 +8,8 @@ import 'dart:convert';
 part 'auth_params.freezed.dart';
 part 'auth_params.g.dart';
 
-AuthParams authParamsFromJson(String str) => AuthParams.fromJson(json.decode(str));
+AuthParams authParamsFromJson(String str) =>
+    AuthParams.fromJson(json.decode(str));
 
 String authParamsToJson(AuthParams data) => json.encode(data.toJson());
 
@@ -20,5 +21,6 @@ class AuthParams with _$AuthParams {
     String? up,
   }) = _AuthParams;
 
-  factory AuthParams.fromJson(Map<String, dynamic> json) => _$AuthParamsFromJson(json);
+  factory AuthParams.fromJson(Map<String, dynamic> json) =>
+      _$AuthParamsFromJson(json);
 }

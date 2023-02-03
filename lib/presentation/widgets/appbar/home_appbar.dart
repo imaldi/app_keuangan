@@ -23,40 +23,53 @@ class _HomeAppbarState extends State<HomeAppbar> {
         width: double.infinity,
         child: Column(
           children: [
-            IntrinsicHeight(child: Container(
+            IntrinsicHeight(
+                child: Container(
               color: Colors.white,
               padding: const EdgeInsets.all(sizeNormal),
-              child: Column(children: [
-              Padding(
-                padding: const EdgeInsets.all(sizeNormal),
-                child: Stack(
-                  alignment: Alignment.centerRight,
-                  children: [
-                    Container(
-                        width: double.infinity,
-                        child: const Center(child: CustomText("APP KEUANGAN",color: primaryColor,weight: FontWeight.bold,))),
-                    SvgPicture.asset(bellIconPath),
-                  ],
-                ),
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                // TODO: make some of these transparent
-                children: const [
-                  LabelledSvgIcon(homeIconPath, "HOME",optionalTextTopMargin: sizeNormal,),
-                  Opacity(
-                      opacity: 0.4,
-                      child: LabelledSvgIcon(stockIconPath, "TRANSAKSI")),
-                  Opacity(
-                      opacity: 0.4,
-                      child: LabelledSvgIcon(newsIconPath, "LAPORAN")),
-                  Opacity(
-                      opacity: 0.4,
-                      child: LabelledSvgIcon(settingsIconPath, "TOOLS")),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(sizeNormal),
+                    child: Stack(
+                      alignment: Alignment.centerRight,
+                      children: [
+                        Container(
+                            width: double.infinity,
+                            child: const Center(
+                                child: CustomText(
+                              "APP KEUANGAN",
+                              color: primaryColor,
+                              weight: FontWeight.bold,
+                            ))),
+                        SvgPicture.asset(bellIconPath),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // TODO: make some of these transparent
+                    children: const [
+                      LabelledSvgIcon(
+                        homeIconPath,
+                        "HOME",
+                        optionalTextTopMargin: sizeNormal,
+                      ),
+                      Opacity(
+                          opacity: 0.4,
+                          child: LabelledSvgIcon(stockIconPath, "TRANSAKSI")),
+                      Opacity(
+                          opacity: 0.4,
+                          child: LabelledSvgIcon(newsIconPath, "LAPORAN")),
+                      Opacity(
+                          opacity: 0.4,
+                          child: LabelledSvgIcon(settingsIconPath, "TOOLS")),
+                    ],
+                  ),
                 ],
               ),
-            ],),)),
+            )),
             Container(
               color: Colors.transparent,
               child: Row(
@@ -64,13 +77,17 @@ class _HomeAppbarState extends State<HomeAppbar> {
                 children: [
                   Container(
                     padding: const EdgeInsets.all(sizeNormal),
-                    decoration: BoxDecoration(color: Colors.white,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
                       border: Border.all(color: Colors.transparent),
-                      borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(sizeNormal), bottomRight: Radius.circular(sizeNormal)),
+                      borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(sizeNormal),
+                          bottomRight: Radius.circular(sizeNormal)),
                     ),
                     child: SvgPicture.asset(reloadIconPath),
                   ),
-                ],),
+                ],
+              ),
             )
           ],
         ),

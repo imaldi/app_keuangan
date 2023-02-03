@@ -16,12 +16,10 @@ class InitDataRepositoryImpl implements InitDataRepository {
   final NetworkInfo networkInfo;
 
   InitDataRepositoryImpl(
-      {
-        required this.initDataRemoteDataSource,
-        required this.networkInfo
-      });
+      {required this.initDataRemoteDataSource, required this.networkInfo});
   @override
-  Future<Either<Failure, InitDataResponse>> initData(InitDataParams params) async {
+  Future<Either<Failure, InitDataResponse>> initData(
+      InitDataParams params) async {
     if (!(await networkInfo.isConnected)) return Left(NoInternetFailure());
 
     try {

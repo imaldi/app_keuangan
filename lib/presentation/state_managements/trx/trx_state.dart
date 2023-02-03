@@ -8,16 +8,19 @@ class TrxInitial extends TrxState {
   @override
   List<Object> get props => [];
 }
+
 class TrxLoading extends TrxState {
   @override
   List<Object> get props => [];
 }
+
 class TrxSuccess extends TrxState {
   final TrxResponse response;
   const TrxSuccess(this.response);
   @override
   List<Object> get props => [response];
 }
+
 class TrxFailed extends TrxState {
   final String errorMessage;
 

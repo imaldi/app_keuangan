@@ -33,7 +33,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         'un': authParams.un,
         'up': authParams.up,
       },
-    ).timeout(const Duration(seconds: 5), onTimeout: (){
+    ).timeout(const Duration(seconds: 5), onTimeout: () {
       throw TimeoutException("Ini ada yang salah");
     });
 

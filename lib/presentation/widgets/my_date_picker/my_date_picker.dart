@@ -11,8 +11,13 @@ class MyDatePicker extends StatefulWidget {
   final Color? backgroundColor;
   final Color? textColor;
   final TextEditingController controller;
-  const MyDatePicker({this.backgroundColor, this.textColor, required this.controller, required this.onTapDateResult,Key? key}) : super(key: key);
-
+  const MyDatePicker(
+      {this.backgroundColor,
+      this.textColor,
+      required this.controller,
+      required this.onTapDateResult,
+      Key? key})
+      : super(key: key);
 
   @override
   _MyDatePickerState createState() => _MyDatePickerState();
@@ -23,9 +28,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
   Widget build(BuildContext context) {
     return RoundedContainer(
         margin: const EdgeInsets.all(sizeNormal),
-        boxDecoration: BoxDecoration(
-            color: widget.backgroundColor
-        ),
+        boxDecoration: BoxDecoration(color: widget.backgroundColor),
         child: GestureDetector(
           onTap: () async {
             var newDate = await showDatePicker(
@@ -34,7 +37,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
                 firstDate: DateTime(2000),
                 lastDate: DateTime(2100));
             var onTapDateResult = widget.onTapDateResult;
-            if(onTapDateResult != null){
+            if (onTapDateResult != null) {
               onTapDateResult(newDate);
             }
           },

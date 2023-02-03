@@ -13,7 +13,15 @@ class LabelledSvgIcon extends StatelessWidget {
   final BoxConstraints? constraints;
   final EdgeInsets? padding;
   final EdgeInsets? margin;
-  const LabelledSvgIcon(this.assetPath,this.label,{this.svgSize, this.padding, this.margin, this.optionalTextTopMargin, this.size, this.constraints, Key? key}) : super(key: key);
+  const LabelledSvgIcon(this.assetPath, this.label,
+      {this.svgSize,
+      this.padding,
+      this.margin,
+      this.optionalTextTopMargin,
+      this.size,
+      this.constraints,
+      Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +33,25 @@ class LabelledSvgIcon extends StatelessWidget {
           constraints: constraints,
           padding: padding,
           margin: padding,
-          child: Column(children: [
-            SvgPicture.asset(assetPath,width: svgSize,height: svgSize,),
-            Container(
-                constraints: constraints,
-                margin: EdgeInsets.only(top: optionalTextTopMargin ?? 0.0),
-                child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: CustomText(label,color: primaryColor,weight: FontWeight.bold,))),
-          ],),
+          child: Column(
+            children: [
+              SvgPicture.asset(
+                assetPath,
+                width: svgSize,
+                height: svgSize,
+              ),
+              Container(
+                  constraints: constraints,
+                  margin: EdgeInsets.only(top: optionalTextTopMargin ?? 0.0),
+                  child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: CustomText(
+                        label,
+                        color: primaryColor,
+                        weight: FontWeight.bold,
+                      ))),
+            ],
+          ),
         ),
       ),
     );

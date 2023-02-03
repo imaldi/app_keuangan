@@ -8,7 +8,8 @@ import 'dart:convert';
 part 'init_data_params.freezed.dart';
 part 'init_data_params.g.dart';
 
-InitDataParams initDataParamsFromJson(String str) => InitDataParams.fromJson(json.decode(str));
+InitDataParams initDataParamsFromJson(String str) =>
+    InitDataParams.fromJson(json.decode(str));
 
 String initDataParamsToJson(InitDataParams data) => json.encode(data.toJson());
 
@@ -19,5 +20,6 @@ class InitDataParams with _$InitDataParams {
     int? outletId,
   }) = _InitDataParams;
 
-  factory InitDataParams.fromJson(Map<String, dynamic> json) => _$InitDataParamsFromJson(json);
+  factory InitDataParams.fromJson(Map<String, dynamic> json) =>
+      _$InitDataParamsFromJson(json);
 }

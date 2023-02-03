@@ -21,8 +21,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       var failOrLoaded = await loginUseCase(event.params);
 
       var currentState = failOrLoaded.fold(
-              (failure) => AuthFailed(errorMessage: "${failure.runtimeType}"),
-              (response) => AuthSuccess(response));
+          (failure) => AuthFailed(errorMessage: "${failure.runtimeType}"),
+          (response) => AuthSuccess(response));
       emit(currentState);
     });
   }

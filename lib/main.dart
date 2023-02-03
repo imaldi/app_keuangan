@@ -30,7 +30,10 @@ class RootWidget extends StatelessWidget {
           appBarTheme: AppBarTheme.of(context).copyWith(
             centerTitle: true,
             backgroundColor: Colors.white,
-            titleTextStyle: TextStyle(color: primaryColor,fontWeight: FontWeight.bold,),
+            titleTextStyle: TextStyle(
+              color: primaryColor,
+              fontWeight: FontWeight.bold,
+            ),
             iconTheme: IconThemeData(color: primaryColor),
           ),
           textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme),

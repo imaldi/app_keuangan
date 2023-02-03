@@ -8,9 +8,11 @@ import 'dart:convert';
 part 'init_data_response.freezed.dart';
 part 'init_data_response.g.dart';
 
-InitDataResponse initDataResponseFromJson(String str) => InitDataResponse.fromJson(json.decode(str));
+InitDataResponse initDataResponseFromJson(String str) =>
+    InitDataResponse.fromJson(json.decode(str));
 
-String initDataResponseToJson(InitDataResponse data) => json.encode(data.toJson());
+String initDataResponseToJson(InitDataResponse data) =>
+    json.encode(data.toJson());
 
 @freezed
 class InitDataResponse with _$InitDataResponse {
@@ -21,7 +23,8 @@ class InitDataResponse with _$InitDataResponse {
     String? debugLive,
   }) = _InitDataResponse;
 
-  factory InitDataResponse.fromJson(Map<String, dynamic> json) => _$InitDataResponseFromJson(json);
+  factory InitDataResponse.fromJson(Map<String, dynamic> json) =>
+      _$InitDataResponseFromJson(json);
 }
 
 @freezed
@@ -46,7 +49,8 @@ class CurTipe with _$CurTipe {
     String? ctKet,
   }) = _CurTipe;
 
-  factory CurTipe.fromJson(Map<String, dynamic> json) => _$CurTipeFromJson(json);
+  factory CurTipe.fromJson(Map<String, dynamic> json) =>
+      _$CurTipeFromJson(json);
 }
 
 @freezed
@@ -98,7 +102,8 @@ class OutletSub with _$OutletSub {
     String? orderId,
   }) = _OutletSub;
 
-  factory OutletSub.fromJson(Map<String, dynamic> json) => _$OutletSubFromJson(json);
+  factory OutletSub.fromJson(Map<String, dynamic> json) =>
+      _$OutletSubFromJson(json);
 }
 
 @freezed
@@ -114,7 +119,8 @@ class PayTipe with _$PayTipe {
     String? delStatus,
   }) = _PayTipe;
 
-  factory PayTipe.fromJson(Map<String, dynamic> json) => _$PayTipeFromJson(json);
+  factory PayTipe.fromJson(Map<String, dynamic> json) =>
+      _$PayTipeFromJson(json);
 }
 
 @freezed
@@ -127,7 +133,8 @@ class TrxTipe with _$TrxTipe {
     String? delStatus,
   }) = _TrxTipe;
 
-  factory TrxTipe.fromJson(Map<String, dynamic> json) => _$TrxTipeFromJson(json);
+  factory TrxTipe.fromJson(Map<String, dynamic> json) =>
+      _$TrxTipeFromJson(json);
 }
 
 @freezed
@@ -136,7 +143,8 @@ class DebugParamSent with _$DebugParamSent {
     String? actInitDataOutletId1,
   }) = _DebugParamSent;
 
-  factory DebugParamSent.fromJson(Map<String, dynamic> json) => _$DebugParamSentFromJson(json);
+  factory DebugParamSent.fromJson(Map<String, dynamic> json) =>
+      _$DebugParamSentFromJson(json);
 }
 
 @freezed

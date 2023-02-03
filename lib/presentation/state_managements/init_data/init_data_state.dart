@@ -8,16 +8,19 @@ class InitDataInitial extends InitDataState {
   @override
   List<Object> get props => [];
 }
+
 class InitDataLoading extends InitDataState {
   @override
   List<Object> get props => [];
 }
+
 class InitDataSuccess extends InitDataState {
   final InitDataResponse response;
   const InitDataSuccess(this.response);
   @override
   List<Object> get props => [response];
 }
+
 class InitDataFailed extends InitDataState {
   final String errorMessage;
 

@@ -24,7 +24,7 @@ class InitDataRemoteDataSourceImpl extends InitDataRemoteDataSource {
         'act': initDataAct,
         'outlet_id': params.outletId,
       },
-    ).timeout(const Duration(seconds: 5), onTimeout: (){
+    ).timeout(const Duration(seconds: 5), onTimeout: () {
       throw TimeoutException("Ini ada yang salah");
     });
 
@@ -34,5 +34,4 @@ class InitDataRemoteDataSourceImpl extends InitDataRemoteDataSource {
       throw ServerException();
     }
   }
-
 }

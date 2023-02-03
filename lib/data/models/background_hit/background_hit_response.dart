@@ -8,9 +8,11 @@ import 'dart:convert';
 part 'background_hit_response.freezed.dart';
 part 'background_hit_response.g.dart';
 
-BackgroundHitResponse backgroundHitResponseFromJson(String str) => BackgroundHitResponse.fromJson(json.decode(str));
+BackgroundHitResponse backgroundHitResponseFromJson(String str) =>
+    BackgroundHitResponse.fromJson(json.decode(str));
 
-String backgroundHitResponseToJson(BackgroundHitResponse data) => json.encode(data.toJson());
+String backgroundHitResponseToJson(BackgroundHitResponse data) =>
+    json.encode(data.toJson());
 
 @freezed
 class BackgroundHitResponse with _$BackgroundHitResponse {
@@ -21,7 +23,8 @@ class BackgroundHitResponse with _$BackgroundHitResponse {
     String? debugLive,
   }) = _BackgroundHitResponse;
 
-  factory BackgroundHitResponse.fromJson(Map<String, dynamic> json) => _$BackgroundHitResponseFromJson(json);
+  factory BackgroundHitResponse.fromJson(Map<String, dynamic> json) =>
+      _$BackgroundHitResponseFromJson(json);
 }
 
 @freezed
@@ -51,7 +54,8 @@ class DebugParamSent with _$DebugParamSent {
     String? namaUserEmailUserUserComNohp08111,
   }) = _DebugParamSent;
 
-  factory DebugParamSent.fromJson(Map<String, dynamic> json) => _$DebugParamSentFromJson(json);
+  factory DebugParamSent.fromJson(Map<String, dynamic> json) =>
+      _$DebugParamSentFromJson(json);
 }
 
 @freezed

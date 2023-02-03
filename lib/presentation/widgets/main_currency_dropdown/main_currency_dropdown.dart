@@ -8,12 +8,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/resources/const/numbers/sizes.dart';
 
-enum Currency {
-  IDR,
-  USD,
-  EUR,
-  SGD
-}
+enum Currency { IDR, USD, EUR, SGD }
+
 class MainCurrencyDropdown extends StatefulWidget {
   const MainCurrencyDropdown({Key? key}) : super(key: key);
 
@@ -23,8 +19,7 @@ class MainCurrencyDropdown extends StatefulWidget {
 
 class _MainCurrencyDropdownState extends State<MainCurrencyDropdown> {
   var selectedValue = Currency.IDR;
-  var items =
-  [
+  var items = [
     {
       "text": "IDR",
       "value": Currency.IDR,
@@ -47,7 +42,6 @@ class _MainCurrencyDropdownState extends State<MainCurrencyDropdown> {
     },
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -62,15 +56,23 @@ class _MainCurrencyDropdownState extends State<MainCurrencyDropdown> {
           isDense: true,
           items: items
               .map((item) => DropdownMenuItem<Currency>(
-            value: item["value"] as Currency,
-            child: DropdownMenuItem(value: item["value"] as Currency,child: Row(children: [
-              SvgPicture.asset(item["icon"].toString()),
-              SizedBox(width: sizeNormal,
-              ),
-              CustomText("${item["text"]}",color: primaryColor,),
-            ],),
-            ),
-          ))
+                    value: item["value"] as Currency,
+                    child: DropdownMenuItem(
+                      value: item["value"] as Currency,
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(item["icon"].toString()),
+                          SizedBox(
+                            width: sizeNormal,
+                          ),
+                          CustomText(
+                            "${item["text"]}",
+                            color: primaryColor,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ))
               .toList(),
           value: selectedValue,
           onChanged: (value) {
@@ -82,8 +84,8 @@ class _MainCurrencyDropdownState extends State<MainCurrencyDropdown> {
           iconSize: sizeMedium,
           iconEnabledColor: Colors.white,
           iconDisabledColor: Colors.grey,
-          buttonPadding: const EdgeInsets.only(
-              left: sizeMedium, right: sizeMedium),
+          buttonPadding:
+              const EdgeInsets.only(left: sizeMedium, right: sizeMedium),
           buttonDecoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
             color: Colors.white,

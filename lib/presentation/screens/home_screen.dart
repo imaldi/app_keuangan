@@ -13,18 +13,19 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-            const HomeAppbar(),
+              const HomeAppbar(),
               Container(
-                constraints: const BoxConstraints(maxHeight: sizeHuge*3),
+                constraints: const BoxConstraints(maxHeight: sizeHuge * 3),
                 margin: const EdgeInsets.symmetric(vertical: sizeMedium),
                 child: HomeScreenMainContainer(),
               )
-          ],),
+            ],
+          ),
         ),
       ),
     );

@@ -12,17 +12,15 @@ part 'trx_state.dart';
 
 class TrxBloc extends Bloc<TrxEvent, TrxState> {
   final GetTrxUseCase getTrxUseCase;
-  TrxBloc({
-    required this.getTrxUseCase
-}) : super(TrxInitial()) {
+  TrxBloc({required this.getTrxUseCase}) : super(TrxInitial()) {
     on<GetTrxEvent>((event, emit) async {
       emit(TrxLoading());
 
       var failOrLoaded = await getTrxUseCase(event.params);
 
       var currentState = failOrLoaded.fold(
-              (failure) => TrxFailed(errorMessage: "${failure.runtimeType}"),
-              (response) => TrxSuccess(response));
+          (failure) => TrxFailed(errorMessage: "${failure.runtimeType}"),
+          (response) => TrxSuccess(response));
       emit(currentState);
     });
   }

@@ -1,5 +1,3 @@
-
-
 import 'package:intl/intl.dart';
 
 String currencySymbol({required String localeString}) {
@@ -12,18 +10,18 @@ String currencyName({required String localeString}) {
   return format.currencyName ?? "-";
 }
 
-String rupiahSymbol(){
+String rupiahSymbol() {
   return currencySymbol(localeString: "id");
 }
 
-String usdSymbol(){
+String usdSymbol() {
   return currencySymbol(localeString: "en_US");
 }
 
-String eurSymbol(){
+String eurSymbol() {
   return currencySymbol(localeString: "eu");
 }
 
-String sgdSymbol(){
+String sgdSymbol() {
   return currencySymbol(localeString: "en_SG");
 }

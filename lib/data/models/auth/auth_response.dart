@@ -8,7 +8,8 @@ import 'dart:convert';
 part 'auth_response.freezed.dart';
 part 'auth_response.g.dart';
 
-AuthResponse authResponseFromJson(String str) => AuthResponse.fromJson(json.decode(str));
+AuthResponse authResponseFromJson(String str) =>
+    AuthResponse.fromJson(json.decode(str));
 
 String authResponseToJson(AuthResponse data) => json.encode(data.toJson());
 
@@ -21,7 +22,8 @@ class AuthResponse with _$AuthResponse {
     String? debugLive,
   }) = _AuthResponse;
 
-  factory AuthResponse.fromJson(Map<String, dynamic> json) => _$AuthResponseFromJson(json);
+  factory AuthResponse.fromJson(Map<String, dynamic> json) =>
+      _$AuthResponseFromJson(json);
 }
 
 @freezed
@@ -55,7 +57,8 @@ class DebugParamSent with _$DebugParamSent {
     String? actLoginUnUserUserComUpUser,
   }) = _DebugParamSent;
 
-  factory DebugParamSent.fromJson(Map<String, dynamic> json) => _$DebugParamSentFromJson(json);
+  factory DebugParamSent.fromJson(Map<String, dynamic> json) =>
+      _$DebugParamSentFromJson(json);
 }
 
 @freezed

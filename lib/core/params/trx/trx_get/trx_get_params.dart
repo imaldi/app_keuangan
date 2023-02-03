@@ -8,7 +8,8 @@ import 'dart:convert';
 part 'trx_get_params.freezed.dart';
 part 'trx_get_params.g.dart';
 
-TrxGetParams trxGetParamsFromJson(String str) => TrxGetParams.fromJson(json.decode(str));
+TrxGetParams trxGetParamsFromJson(String str) =>
+    TrxGetParams.fromJson(json.decode(str));
 
 String trxGetParamsToJson(TrxGetParams data) => json.encode(data.toJson());
 
@@ -21,7 +22,8 @@ class TrxGetParams with _$TrxGetParams {
     Data? data,
   }) = _TrxGetParams;
 
-  factory TrxGetParams.fromJson(Map<String, dynamic> json) => _$TrxGetParamsFromJson(json);
+  factory TrxGetParams.fromJson(Map<String, dynamic> json) =>
+      _$TrxGetParamsFromJson(json);
 }
 
 @freezed

@@ -135,13 +135,14 @@ class MasukScreenState extends State<MasukScreen> {
             ),
             MyDatePicker(
               controller: tanggalController,
-              onTapDateResult: (newDate){
-              setState(() {
-                tanggalController.text = DateFormat("dd/MM/yyyy")
-                    .format(newDate ?? DateTime.now())
-                    .toString();
-              });
-            },),
+              onTapDateResult: (newDate) {
+                setState(() {
+                  tanggalController.text = DateFormat("dd/MM/yyyy")
+                      .format(newDate ?? DateTime.now())
+                      .toString();
+                });
+              },
+            ),
             const CustomText(
               "Input",
               color: Colors.white,

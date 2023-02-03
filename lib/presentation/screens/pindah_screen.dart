@@ -84,17 +84,17 @@ class _PindahScreenState extends State<PindahScreen> {
                                   ),
                                   items: items
                                       .map((item) => DropdownMenuItem<String>(
-                                    value: item,
-                                    child: Text(
-                                      item,
-                                      style: const TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ))
+                                            value: item,
+                                            child: Text(
+                                              item,
+                                              style: const TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ))
                                       .toList(),
                                   value: selectedValue,
                                   onChanged: (value) {
@@ -157,17 +157,17 @@ class _PindahScreenState extends State<PindahScreen> {
                                   ),
                                   items: items
                                       .map((item) => DropdownMenuItem<String>(
-                                    value: item,
-                                    child: Text(
-                                      item,
-                                      style: const TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ))
+                                            value: item,
+                                            child: Text(
+                                              item,
+                                              style: const TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ))
                                       .toList(),
                                   value: selectedValue,
                                   onChanged: (value) {
@@ -277,48 +277,48 @@ class _PindahScreenState extends State<PindahScreen> {
                     children: [
                       Expanded(
                           child: RoundedContainer(
-                            constraints: const BoxConstraints(minHeight: 80),
-                            margin: const EdgeInsets.symmetric(
-                                vertical: sizeNormal, horizontal: sizeSmall),
-                            boxDecoration: const BoxDecoration(color: accentColor),
-                            child: Column(
-                              children: const [
-                                Icon(
-                                  Icons.camera_alt_outlined,
-                                  color: primaryColor,
-                                ),
-                                CustomText(
-                                  "Tambahkan Foto",
-                                  textAlign: TextAlign.center,
-                                  color: primaryColor,
-                                ),
-                              ],
+                        constraints: const BoxConstraints(minHeight: 80),
+                        margin: const EdgeInsets.symmetric(
+                            vertical: sizeNormal, horizontal: sizeSmall),
+                        boxDecoration: const BoxDecoration(color: accentColor),
+                        child: Column(
+                          children: const [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              color: primaryColor,
                             ),
-                          )),
+                            CustomText(
+                              "Tambahkan Foto",
+                              textAlign: TextAlign.center,
+                              color: primaryColor,
+                            ),
+                          ],
+                        ),
+                      )),
                       Expanded(
                           child: RoundedContainer(
-                            margin: const EdgeInsets.symmetric(
-                                vertical: sizeNormal, horizontal: sizeSmall),
-                            boxDecoration:
+                        margin: const EdgeInsets.symmetric(
+                            vertical: sizeNormal, horizontal: sizeSmall),
+                        boxDecoration:
                             BoxDecoration(color: accentColor.withAlpha(99)),
-                            child: Container(),
-                          )),
+                        child: Container(),
+                      )),
                       Expanded(
                           child: RoundedContainer(
-                            margin: const EdgeInsets.symmetric(
-                                vertical: sizeNormal, horizontal: sizeSmall),
-                            boxDecoration:
+                        margin: const EdgeInsets.symmetric(
+                            vertical: sizeNormal, horizontal: sizeSmall),
+                        boxDecoration:
                             BoxDecoration(color: accentColor.withAlpha(99)),
-                            child: Container(),
-                          )),
+                        child: Container(),
+                      )),
                       Expanded(
                           child: RoundedContainer(
-                            margin: const EdgeInsets.symmetric(
-                                vertical: sizeNormal, horizontal: sizeSmall),
-                            boxDecoration:
+                        margin: const EdgeInsets.symmetric(
+                            vertical: sizeNormal, horizontal: sizeSmall),
+                        boxDecoration:
                             BoxDecoration(color: accentColor.withAlpha(99)),
-                            child: Container(),
-                          )),
+                        child: Container(),
+                      )),
                     ],
                   ),
                 )),
@@ -338,7 +338,7 @@ class _PindahScreenState extends State<PindahScreen> {
                 onPressed: () {},
               ),
             ),
-            Stack(fit:StackFit.passthrough)
+            Stack(fit: StackFit.passthrough)
           ],
         ),
       ),

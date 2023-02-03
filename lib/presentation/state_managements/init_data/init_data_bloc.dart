@@ -15,15 +15,15 @@ class InitDataBloc extends Bloc<InitDataEvent, InitDataState> {
   final InitDataUseCase initDataUseCase;
   InitDataBloc({
     required this.initDataUseCase,
-}) : super(InitDataInitial()) {
+  }) : super(InitDataInitial()) {
     on<InitializeDataEvent>((event, emit) async {
       emit(InitDataLoading());
 
       var failOrLoaded = await initDataUseCase(event.params);
 
       var currentState = failOrLoaded.fold(
-              (failure) => InitDataFailed(errorMessage: "${failure.runtimeType}"),
-              (response) => InitDataSuccess(response));
+          (failure) => InitDataFailed(errorMessage: "${failure.runtimeType}"),
+          (response) => InitDataSuccess(response));
       emit(currentState);
     });
   }

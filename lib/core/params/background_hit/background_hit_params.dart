@@ -8,9 +8,11 @@ import 'dart:convert';
 part 'background_hit_params.freezed.dart';
 part 'background_hit_params.g.dart';
 
-BackgroundHitParams backgroundHitParamsFromJson(String str) => BackgroundHitParams.fromJson(json.decode(str));
+BackgroundHitParams backgroundHitParamsFromJson(String str) =>
+    BackgroundHitParams.fromJson(json.decode(str));
 
-String backgroundHitParamsToJson(BackgroundHitParams data) => json.encode(data.toJson());
+String backgroundHitParamsToJson(BackgroundHitParams data) =>
+    json.encode(data.toJson());
 
 @freezed
 class BackgroundHitParams with _$BackgroundHitParams {
@@ -20,5 +22,6 @@ class BackgroundHitParams with _$BackgroundHitParams {
     String? nohp,
   }) = _BackgroundHitParams;
 
-  factory BackgroundHitParams.fromJson(Map<String, dynamic> json) => _$BackgroundHitParamsFromJson(json);
+  factory BackgroundHitParams.fromJson(Map<String, dynamic> json) =>
+      _$BackgroundHitParamsFromJson(json);
 }

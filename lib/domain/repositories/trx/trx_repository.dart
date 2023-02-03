@@ -6,5 +6,4 @@ import '../../../core/error/failures.dart';
 
 abstract class TrxRepository {
   Future<Either<Failure, TrxResponse>> getTrx(TrxGetParams params);
-
 }

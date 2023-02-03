@@ -8,7 +8,8 @@ import 'dart:convert';
 part 'trx_response.freezed.dart';
 part 'trx_response.g.dart';
 
-TrxResponse trxResponseFromJson(String str) => TrxResponse.fromJson(json.decode(str));
+TrxResponse trxResponseFromJson(String str) =>
+    TrxResponse.fromJson(json.decode(str));
 
 String trxResponseToJson(TrxResponse data) => json.encode(data.toJson());
 
@@ -21,7 +22,8 @@ class TrxResponse with _$TrxResponse {
     String? debugLive,
   }) = _TrxResponse;
 
-  factory TrxResponse.fromJson(Map<String, dynamic> json) => _$TrxResponseFromJson(json);
+  factory TrxResponse.fromJson(Map<String, dynamic> json) =>
+      _$TrxResponseFromJson(json);
 }
 
 @freezed
@@ -69,10 +71,8 @@ final trxCurtipeVarValues = EnumValues({
 
 enum TrxPtipeNama { KELUAR, MASUK }
 
-final trxPtipeNamaValues = EnumValues({
-  "Keluar": TrxPtipeNama.KELUAR,
-  "Masuk": TrxPtipeNama.MASUK
-});
+final trxPtipeNamaValues =
+    EnumValues({"Keluar": TrxPtipeNama.KELUAR, "Masuk": TrxPtipeNama.MASUK});
 
 @freezed
 class DebugParamSent with _$DebugParamSent {
@@ -80,7 +80,8 @@ class DebugParamSent with _$DebugParamSent {
     String? actTrxGetOutletId1UserId2DataTrxId0Status1DateStartDateEnd,
   }) = _DebugParamSent;
 
-  factory DebugParamSent.fromJson(Map<String, dynamic> json) => _$DebugParamSentFromJson(json);
+  factory DebugParamSent.fromJson(Map<String, dynamic> json) =>
+      _$DebugParamSentFromJson(json);
 }
 
 @freezed
