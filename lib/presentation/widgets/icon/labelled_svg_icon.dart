@@ -47,7 +47,6 @@ class LabelledSvgIcon extends StatelessWidget {
                       alignment: Alignment.bottomCenter,
                       child: CustomText(
                         label,
-                        color: primaryColor,
                         weight: FontWeight.bold,
                       ))),
             ],

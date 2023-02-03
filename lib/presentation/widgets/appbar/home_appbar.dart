@@ -8,14 +8,23 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../text/custom_text.dart';
 
+// TODO ubah index ketika pageView onPageChanged
 class HomeAppbar extends StatefulWidget {
-  const HomeAppbar({Key? key}) : super(key: key);
+  int selectedIndex;
+  final Function(int) pageViewControllerCallback;
+  HomeAppbar(this.selectedIndex, this.pageViewControllerCallback,{Key? key}) : super(key: key);
 
   @override
   _HomeAppbarState createState() => _HomeAppbarState();
 }
 
 class _HomeAppbarState extends State<HomeAppbar> {
+  var selectedIndex = 0;
+  @override
+  void initState() {
+    super.initState();
+    selectedIndex = widget.selectedIndex;
+  }
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
@@ -39,7 +48,6 @@ class _HomeAppbarState extends State<HomeAppbar> {
                             child: const Center(
                                 child: CustomText(
                               "APP KEUANGAN",
-                              color: primaryColor,
                               weight: FontWeight.bold,
                             ))),
                         SvgPicture.asset(bellIconPath),
@@ -50,21 +58,58 @@ class _HomeAppbarState extends State<HomeAppbar> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     // TODO: make some of these transparent
-                    children: const [
-                      LabelledSvgIcon(
-                        homeIconPath,
-                        "HOME",
-                        optionalTextTopMargin: sizeNormal,
+                    children: [
+                      GestureDetector(
+                        onTap:(){
+                          setState(() {
+                            selectedIndex = 0;
+                            widget.pageViewControllerCallback(selectedIndex);
+                            print("Pressed: 0");
+                          });
+                        },
+                        child: Opacity(
+                          opacity: selectedIndex == 0 ? 1 : 0.4,
+                          child: LabelledSvgIcon(
+                            homeIconPath,
+                            "HOME",
+                            optionalTextTopMargin: sizeNormal,
+                          ),
+                        ),
                       ),
-                      Opacity(
-                          opacity: 0.4,
-                          child: LabelledSvgIcon(stockIconPath, "TRANSAKSI")),
-                      Opacity(
-                          opacity: 0.4,
-                          child: LabelledSvgIcon(newsIconPath, "LAPORAN")),
-                      Opacity(
-                          opacity: 0.4,
-                          child: LabelledSvgIcon(settingsIconPath, "TOOLS")),
+                      GestureDetector(
+                        onTap:(){
+                          setState(() {
+                            selectedIndex = 1;
+                            widget.pageViewControllerCallback(selectedIndex);
+                            print("Pressed: 1");
+                          });
+                        },
+                        child: Opacity(
+                            opacity: selectedIndex == 1 ? 1 : 0.4,
+                            child: LabelledSvgIcon(stockIconPath, "TRANSAKSI")),
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          setState(() {
+                            selectedIndex = 2;
+                            widget.pageViewControllerCallback(selectedIndex);
+                            print("Pressed: 2");
+                          });
+                        },child: Opacity(
+                            opacity: selectedIndex == 2 ? 1 : 0.4,
+                            child: LabelledSvgIcon(newsIconPath, "LAPORAN")),
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          setState(() {
+                            selectedIndex = 3;
+                            widget.pageViewControllerCallback(selectedIndex);
+                            print("Pressed: 3");
+                          });
+                        },child: Opacity(
+                            opacity: selectedIndex == 3 ? 1 : 0.4,
+                            child: LabelledSvgIcon(settingsIconPath, "TOOLS")),
+                      ),
                     ],
                   ),
                 ],

@@ -4,6 +4,7 @@ import 'core/routes/app_router.gr.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
+// TODO change icons to black (just change the resource no need to change the name, remember to edit the svg)
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   initializeDateFormatting('id');
@@ -13,7 +14,7 @@ void main() {
 
 class RootWidget extends StatelessWidget {
   final _appRouter = AppRouter();
-
+  final textColor = Colors.black;
   RootWidget({super.key});
 
   // This widget is the root of your application.
@@ -26,12 +27,12 @@ class RootWidget extends StatelessWidget {
       title: 'App Keuangan',
       theme: ThemeData(
           primaryColor: primaryColor,
-          scaffoldBackgroundColor: primaryColor,
+          // scaffoldBackgroundColor: primaryColor,
           appBarTheme: AppBarTheme.of(context).copyWith(
             centerTitle: true,
             backgroundColor: Colors.white,
             titleTextStyle: TextStyle(
-              color: primaryColor,
+              // color: primaryColor,
               fontWeight: FontWeight.bold,
             ),
             iconTheme: IconThemeData(color: primaryColor),

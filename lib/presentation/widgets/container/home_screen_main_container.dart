@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/resources/helper/currency_formatter.dart';
+import 'currency_price_table.dart';
 
 class HomeScreenMainContainer extends StatefulWidget {
   const HomeScreenMainContainer({Key? key}) : super(key: key);
@@ -22,13 +23,14 @@ class HomeScreenMainContainer extends StatefulWidget {
 }
 
 class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
-  final primaryTextColor = primaryColor;
+  final primaryTextColor = Colors.black;
   var isUpperContainerExpanded = false;
 
   @override
   Widget build(BuildContext context) {
     return RoundedContainer(
-      margin: const EdgeInsets.symmetric(horizontal: sizeNormal),
+      constraints: const BoxConstraints(maxHeight: sizeHuge * 3),
+      margin: const EdgeInsets.symmetric(vertical: sizeMedium),
       boxDecoration: const BoxDecoration(color: Colors.white),
       clipBehavior: Clip.antiAlias,
       // constraints: const BoxConstraints(maxWidth: 300),
@@ -134,7 +136,7 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
             child: SizedBox.expand(
               child: IntrinsicWidth(
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 400),
+                  duration: const Duration(milliseconds: 300),
                   margin: EdgeInsets.only(
                       left: isUpperContainerExpanded
                           ? orientedWidthScreen(context,
@@ -286,175 +288,9 @@ class _HomeScreenMainContainerState extends State<HomeScreenMainContainer> {
                                                 horizontal: sizeMedium,
                                                 vertical: sizeNormal),
                                             boxDecoration: BoxDecoration(
-                                              color: Colors.white,
+                                              color: primaryColor,
                                             ),
-                                            child: Row(
-                                              children: [
-                                                Expanded(
-                                                  child: Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Expanded(
-                                                        child: Visibility(
-                                                          visible:
-                                                              isUpperContainerExpanded,
-                                                          child: OverflowBox(
-                                                            child: Row(
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                CustomText(
-                                                                  "Jumlah Barang",
-                                                                  weight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                                EllipsisText(),
-                                                                CustomText(
-                                                                  "16",
-                                                                  weight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                              ]..map((e) =>
-                                                                  Expanded(
-                                                                    child: e,
-                                                                  )),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: Visibility(
-                                                          visible:
-                                                              isUpperContainerExpanded,
-                                                          child: OverflowBox(
-                                                            child: Row(
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                const CustomText(
-                                                                  "Total IDR",
-                                                                ),
-                                                                EllipsisText(),
-                                                                CustomText(
-                                                                  "${rupiahSymbol()} 500.000",
-                                                                  color:
-                                                                      primaryTextColor,
-                                                                  weight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                )
-                                                              ]..map((e) =>
-                                                                  FittedBox(
-                                                                    child: e,
-                                                                  )),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: Visibility(
-                                                          visible:
-                                                              isUpperContainerExpanded,
-                                                          child: OverflowBox(
-                                                            child: Row(
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                const CustomText(
-                                                                  "Total USD",
-                                                                ),
-                                                                EllipsisText(),
-                                                                CustomText(
-                                                                  "${usdSymbol()} 0",
-                                                                  color:
-                                                                      primaryTextColor,
-                                                                  weight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                )
-                                                              ]..map((e) =>
-                                                                  FittedBox(
-                                                                    child: e,
-                                                                  )),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: Visibility(
-                                                          visible:
-                                                              isUpperContainerExpanded,
-                                                          child: OverflowBox(
-                                                            child: Row(
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                const CustomText(
-                                                                  "Total EUR",
-                                                                ),
-                                                                EllipsisText(),
-                                                                CustomText(
-                                                                  "${eurSymbol()} 20.000",
-                                                                  color:
-                                                                      primaryTextColor,
-                                                                  weight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                )
-                                                              ]..map((e) =>
-                                                                  FittedBox(
-                                                                    child: e,
-                                                                  )),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: Visibility(
-                                                          visible:
-                                                              isUpperContainerExpanded,
-                                                          child: OverflowBox(
-                                                            child: Row(
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                const CustomText(
-                                                                  "Total SGD",
-                                                                ),
-                                                                EllipsisText(),
-                                                                CustomText(
-                                                                  "${sgdSymbol()} 6.000",
-                                                                  color:
-                                                                      primaryTextColor,
-                                                                  weight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                )
-                                                              ]..map((e) =>
-                                                                  FittedBox(
-                                                                    child: e,
-                                                                  )),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
+                                            child: CurrencyPriceTable(isUpperContainerExpanded: isUpperContainerExpanded),
                                           ),
                                         ),
                                       ],
